@@ -1,0 +1,71 @@
+//colors
+$Green: #99e2d0;
+$Green-Font: #008766;
+$Blue: #89c8fa;
+$Blue-2: #003a68;
+$Primary: #9356dc;
+$White: #ffffff;
+$Black: #101010;
+$Grey: #353535;
+$Secondary: #ff79da;
+$tertiary: #99e2d0;
+$Grey2: #eaeaea;
+$Background: #F6F6F6;
+
+//general used
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+//initial argument: row
+@mixin flex_display($value: row) {
+  display: flex;
+  flex-direction: $value;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+}
+// font modules
+%roboto_16 {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+}
+%roboto_18 {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 300;
+}
+%roboto_24 {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 700;
+}
+//button module
+%button_settings {
+  @extend %roboto_16;
+  width: 218px;
+  height: 50px;
+  border-radius: 25px;
+  color: $White;
+  background: linear-gradient(
+    193deg,
+    $Primary -11.44%,
+    $Secondary 123.93%
+  );
+  border: none;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  margin: 27px 0;
+}
+//header for all pages
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+  }
+  .header_title {
+    display: block; /* necessary to center */
+    margin: auto;
+  }

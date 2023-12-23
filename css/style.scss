@@ -1,0 +1,90 @@
+@import "_mainVariables.scss";
+
+.main_container {
+  @include flex_display(column);
+  max-width: 770px;
+}
+
+
+.search_bar {
+  background-color: $Grey2;
+  //* @include flex_display; */ //je prefere le extend dessous car ça reduit le style.css
+  @extend .main_container;
+  flex-direction: row;
+  column-gap: 17px;
+  height: 50px;
+  box-shadow: 0px -1px 3px 2px rgba(0, 0, 0, 0.2);
+  &_input {
+    @extend %roboto_16;
+    border: none;
+    background-color: $Grey2;
+    order: 2;
+  }
+  &_submit {
+    display: block;
+    width: 14px;
+    color: transparent;
+    background-image: url(../images/logo/Pin.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    border: none;
+    margin-left: 60px;
+  }
+}
+.appeal {
+  @extend .main_container;
+  background-color: $Background;
+  padding: 39px 0;
+  &_title {
+    @extend .main_container;
+    @extend %roboto_24;
+  }
+  &_subtitle {
+    @extend .main_container;
+    @extend %roboto_16;
+    color: $Grey;
+    margin-top: 27px;
+  }
+  &_button {
+    @extend %button_settings;
+  }
+}
+.how_to {
+  @extend .main_container;
+  padding: 48px 0;
+  &_title {
+    @extend .appeal_title;
+    align-items: flex-start;
+    padding-left: 20px;
+    margin-bottom: 26px;
+  }
+  &_container{
+    @extend .main_container;
+    row-gap: 25px;
+  }
+  &_infoDiv{
+    @extend .main_container;
+    @extend %roboto_16;
+    flex-direction: row;
+    width: 322px;
+    height: 72px;
+    background-color: $Background;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    justify-content: space-evenly;
+    position: relative;
+    &_div{
+      @extend .main_container;
+      margin: 0;
+      width:24px;
+      height:24px;
+      background-color: $Primary;
+      color: $White;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      transform: translateX(-50%);
+           
+    }
+  }
+}
