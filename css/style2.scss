@@ -1,0 +1,68 @@
+@import "_mainVariables.scss";
+.banner{
+    @extend .main_container;
+    &_img{
+        width:100%;
+        object-fit: cover;
+        
+    }
+}
+.cards{
+    background-color: $Background;
+    @extend .main_container;
+    transform: translateY(-70px);/* remontée d'image */
+    border-radius: 40px 40px 0 0;
+    padding: 0 15px;
+    &_content{
+        @include flex_display;
+        width: 341px;
+        height: 29px;
+        margin: 0;
+        column-gap: 30px;
+        padding-top: 32px ;
+        justify-content: space-between;
+        &_title{
+            @extend %shrikhand_28;           
+        }
+    }
+                
+    }
+    .menu_subtitle{
+       width:$card_width;
+       @extend %roboto_16_300;
+       text-transform: uppercase;
+       margin-top: 40px;  
+       &::after{
+        content: "";
+        display: block;
+        width: 40px;
+        border-bottom: 3px solid $Green;
+        padding-bottom: 9px;       
+        }
+       }
+
+.card{
+    @extend .main_container;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    width: $card_width;
+    height: 70px;
+    border-radius: 15px;
+    box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.10);
+    margin-top: 12px;
+    padding: 15px;
+
+
+    &_txt{
+        &_title{
+            @extend %roboto_18_500 ;
+        }
+        &_subtitle{
+            @extend %roboto_15_300 ;
+        }
+    }
+    &_prix{
+        @extend %roboto_15_700 ;
+    }
+}

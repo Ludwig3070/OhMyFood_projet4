@@ -1,9 +1,6 @@
 @import "_mainVariables.scss";
 
-.main_container {
-  @include flex_display(column);
-  max-width: $max_width;
-}
+
 
 .search_bar {
   background-color: $Grey2;
