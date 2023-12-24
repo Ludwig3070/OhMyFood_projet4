@@ -4,16 +4,49 @@
   padding: 0;
 }
 
-.how_to_infoDiv, .appeal_subtitle, .search_bar_input, .appeal_button {
+a {
+  text-decoration: none;
+}
+
+.nouveau::after {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
+}
+
+.how_to_infoDiv, .appeal_subtitle, .search_bar_input, .footer_a_p, .appeal_button {
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 500;
+  color: #101010;
 }
 
-.appeal_title, .how_to_title {
+.card_restaurant_txt_content_subtitle {
+  font-family: "Roboto";
+  font-size: 17px;
+  font-weight: 300;
+  color: #101010;
+}
+
+.card_restaurant_txt_content_title {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 700;
+  color: #101010;
+}
+
+.how_to_title, .appeal_title, .restaurants_title {
   font-family: "Roboto";
   font-size: 24px;
   font-weight: 700;
+  color: #101010;
+}
+
+.footer_title {
+  font-family: "Shrikhand";
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .appeal_button {
@@ -38,14 +71,43 @@ header {
   margin: auto;
 }
 
-.main_container, .how_to_infoDiv_div, .how_to_infoDiv, .how_to_container, .how_to, .appeal_subtitle, .appeal_title, .how_to_title, .appeal, .search_bar {
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   margin: auto;
-  max-width: 770px;
+  max-width: 600px;
+  background-color: #353535;
+  color: #ffffff;
+  align-items: flex-start;
+  row-gap: 16px;
+  padding: 22px 25px;
+}
+
+.footer_a {
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  justify-content: flex-start;
+  gap: 11px;
+}
+.footer_a_p {
+  color: #ffffff;
+}
+.main_container, .restaurants_href, .how_to_infoDiv_div, .how_to_infoDiv, .how_to_container, .how_to, .appeal_subtitle, .appeal_title, .restaurants_title, .appeal, .search_bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  max-width: 600px;
 }
 
 .search_bar {
@@ -81,19 +143,19 @@ header {
   margin-top: 27px;
 }
 .how_to {
-  padding: 48px 0;
+  margin: 98px 0 48px 0;
 }
 .how_to_title {
-  align-items: flex-start;
-  padding-left: 20px;
-  margin-bottom: 26px;
+  position: absolute;
+  top: -50px;
+  left: -13px;
 }
 .how_to_container {
   row-gap: 25px;
 }
 .how_to_infoDiv {
   flex-direction: row;
-  width: 322px;
+  width: 305px; /* tu peux jouer pour modifier la largeur */
   height: 72px;
   background-color: #F6F6F6;
   border-radius: 20px;
@@ -111,4 +173,55 @@ header {
   position: absolute;
   left: 0;
   transform: translateX(-50%);
+}
+
+.restaurants_href {
+  row-gap: 18px;
+}
+.restaurants_title {
+  padding: 0;
+  margin: 0;
+  align-items: flex-start;
+}
+
+.card_restaurant {
+  border-radius: 15px 15px 0 0;
+}
+.card_restaurant_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  justify-content: space-between;
+  padding: 16px 13px;
+}
+.card_restaurant_img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 15px 15px 0 0;
+  width: 320px; /* tu peux jouer avec la taille de card ici */
+}
+
+.nouveau {
+  position: relative;
+}
+
+.nouveau::after {
+  content: "Nouveau";
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  width: 80px;
+  height: 29px;
+  background-color: #99e2d0;
+  border-radius: 2px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }/*# sourceMappingURL=style.css.map */

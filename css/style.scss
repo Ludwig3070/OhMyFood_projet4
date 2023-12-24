@@ -2,9 +2,8 @@
 
 .main_container {
   @include flex_display(column);
-  max-width: 770px;
+  max-width: $max_width;
 }
-
 
 .search_bar {
   background-color: $Grey2;
@@ -51,40 +50,91 @@
 }
 .how_to {
   @extend .main_container;
-  padding: 48px 0;
-  &_title {
-    @extend .appeal_title;
-    align-items: flex-start;
-    padding-left: 20px;
-    margin-bottom: 26px;
+  margin: 98px 0 48px 0;
+  &_title {    
+    @extend %roboto_24;
+    position: absolute; 
+    top: -50px; 
+    left: -13px;   
+       
   }
-  &_container{
+  &_container {
     @extend .main_container;
     row-gap: 25px;
   }
-  &_infoDiv{
+  &_infoDiv {
     @extend .main_container;
     @extend %roboto_16;
     flex-direction: row;
-    width: 322px;
+    width: 305px;/* tu peux jouer pour modifier la largeur */
     height: 72px;
     background-color: $Background;
     border-radius: 20px;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     justify-content: space-evenly;
     position: relative;
-    &_div{
+    &_div {
       @extend .main_container;
       margin: 0;
-      width:24px;
-      height:24px;
+      width: 24px;
+      height: 24px;
       background-color: $Primary;
       color: $White;
       border-radius: 50%;
       position: absolute;
       left: 0;
       transform: translateX(-50%);
-           
     }
   }
 }
+.restaurants {
+    &_href{
+      @extend .main_container;
+      row-gap: 18px;
+    }
+    &_title{
+      @extend .appeal_title;
+      padding: 0;
+      margin: 0;
+      align-items: flex-start;
+    }
+}
+.card_restaurant{
+  border-radius: 15px 15px 0 0;
+  &_content{
+    @include flex_display(row);
+    justify-content: space-between;
+    padding: 16px 13px;
+  }
+  &_txt_content{    
+    &_title{
+      @extend %roboto_18_2;
+    }
+    &_subtitle{
+      @extend %roboto_17;
+    }
+  }
+  &_img{
+    object-fit: contain;
+    border-radius: 15px 15px 0 0;
+    width: 320px;/* tu peux jouer avec la taille de card ici */
+  }
+}
+.nouveau{
+  position: relative;
+}
+.nouveau::after{
+    content: "Nouveau";
+    @include flex_display;
+    @extend %roboto_14;
+    width: 80px;
+    height: 29px;
+    background-color: $Green;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 15px;
+    right: 15px;        
+
+}
+  
