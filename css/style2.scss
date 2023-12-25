@@ -21,7 +21,7 @@
     
     &_content{
         @include flex_display;
-        width: 341px;
+        max-width: 341px;
         height: 29px;
         margin: 0;
         column-gap: 30px;
@@ -52,7 +52,7 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
-    width: $card_width;
+    max-width: $card_width; /* permet de reduire un peu plus  */
     height: 70px;
     border-radius: 15px;
     box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.10);
@@ -69,8 +69,21 @@
     &_prix{
         @extend %roboto_15_700 ;
     }
+    &_bottom{/* center commaand button */
+        margin-bottom: 65px;
+    }
+}
+body{
+    background-color: $Black;
+}
+.main_container{
+    background-color: $Background; /* permet d'effacer visuellement la marge entre le footer et.main due à la remontée
+  sur pages 2 a 5 */
+  position: relative;
 }
 
-
-
-
+.button_command{
+    @include button(186px,50px,0);
+    position: absolute;
+    bottom: 40px;
+}

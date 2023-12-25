@@ -34,6 +34,24 @@ a{
   width: 100%;
   margin: auto;
 }
+//button module
+@mixin button($width:218px,$height:50px,$margin:27px) {
+  @extend %roboto_16;
+  @include flex_display;
+  width: $width;
+  height: $height;
+  margin: $margin 0;
+  border-radius: 25px;
+  color: $White;
+  background: linear-gradient(
+    193deg,
+    $Primary -11.44%,
+    $Secondary 123.93%
+  );
+  border: none;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);  
+}
+
 // font modules
 %roboto_14 {
   font-family: "Roboto";
@@ -105,28 +123,12 @@ a{
   font-size: 28px;
   font-weight: 400;
 }
-//button module
-%button_settings {
-  @extend %roboto_16;
-  width: 218px;
-  height: 50px;
-  border-radius: 25px;
-  color: $White;
-  background: linear-gradient(
-    193deg,
-    $Primary -11.44%,
-    $Secondary 123.93%
-  );
-  border: none;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  margin: 27px 0;
-}
+
 //main for all
 .main_container {
   @include flex_display(column);
   max-width: $max_width;
-  /* background-color: $Background; *//* permet d'effacer visuellement la marge entre le footer et.main due à la remontée
-  sur pages 2 a 5 */
+  
 }
 //header for all 
 header {
