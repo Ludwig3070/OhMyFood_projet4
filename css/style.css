@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -68,6 +69,8 @@ a {
   width: 100%;
   margin: auto;
   max-width: 800px;
+  /* background-color: $Background; */ /* permet d'effacer visuellement la marge entre le footer et.main due à la remontée
+sur pages 2 a 5 */
 }
 
 header {
@@ -175,6 +178,9 @@ footer {
   transform: translateX(-50%);
 }
 
+.restaurants {
+  padding-bottom: 66px;
+}
 .restaurants_href {
   row-gap: 18px;
 }

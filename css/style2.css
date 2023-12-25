@@ -64,6 +64,8 @@ a {
   width: 100%;
   margin: auto;
   max-width: 800px;
+  /* background-color: $Background; */ /* permet d'effacer visuellement la marge entre le footer et.main due à la remontée
+sur pages 2 a 5 */
 }
 
 header {
@@ -106,6 +108,13 @@ footer {
 .footer_a_p {
   color: #ffffff;
 }
+.header {
+  align-items: center;
+}
+.header_href {
+  margin-left: 17px;
+}
+
 .banner_img {
   width: 100%;
   -o-object-fit: cover;

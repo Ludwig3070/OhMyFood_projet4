@@ -14,6 +14,7 @@ $Background: #F6F6F6;
 //width
 $max_width: 800px;
 $card_width: 350px;
+$cards_up:70px;
 
 //general used
 * {
@@ -124,6 +125,8 @@ a{
 .main_container {
   @include flex_display(column);
   max-width: $max_width;
+  /* background-color: $Background; *//* permet d'effacer visuellement la marge entre le footer et.main due à la remontée
+  sur pages 2 a 5 */
 }
 //header for all 
 header {

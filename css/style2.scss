@@ -1,4 +1,9 @@
 @import "_mainVariables.scss";
+.header{
+    align-items: center;
+    &_href{
+    margin-left: 17px;}
+}
 .banner{
     @extend .main_container;
     &_img{
@@ -10,9 +15,10 @@
 .cards{
     background-color: $Background;
     @extend .main_container;
-    transform: translateY(-70px);/* remontée d'image */
+    transform: translateY(-$cards_up);/* remontée d'image */
     border-radius: 40px 40px 0 0;
     padding: 0 15px;
+    
     &_content{
         @include flex_display;
         width: 341px;
@@ -52,8 +58,6 @@
     box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.10);
     margin-top: 12px;
     padding: 15px;
-
-
     &_txt{
         &_title{
             @extend %roboto_18_500 ;
@@ -66,3 +70,7 @@
         @extend %roboto_15_700 ;
     }
 }
+
+
+
+
