@@ -1,15 +1,10 @@
 @import "_mainVariables.scss";
-.header{
-    align-items: center;
-    &_href{
-    margin-left: 17px;}
-}
+
 .banner{
     @extend .main_container;
     &_img{
         width:100%;
-        object-fit: cover;
-        
+        object-fit: cover;        
     }
 }
 .cards{
@@ -28,14 +23,14 @@
         padding-top: 32px ;
         justify-content: space-between;
         &_title{
-            @extend %shrikhand_28;           
+            @include font("Shrikhand",28px,400,$Black);           
         }
     }
                 
     }
     .menu_subtitle{
        width:$card_width;
-       @extend %roboto_16_300;
+       @include font("Roboto",16px,300,black);
        text-transform: uppercase;
        margin-top: 40px;  
        &::after{
@@ -60,14 +55,14 @@
     padding: 15px;
     &_txt{
         &_title{
-            @extend %roboto_18_500 ;
+            @include font("Roboto",18px,500,black);
         }
         &_subtitle{
-            @extend %roboto_15_300 ;
+            @include font("Roboto",15px,300,black);
         }
     }
     &_prix{
-        @extend %roboto_15_700 ;
+        @include font("Roboto",15px,700,$Grey);
     }
     &_bottom{/* center commaand button */
         margin-bottom: 65px;

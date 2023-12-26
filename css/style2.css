@@ -9,51 +9,8 @@ a {
   text-decoration: none;
 }
 
-.card_txt_subtitle {
-  font-family: "Roboto";
-  font-size: 15px;
-  font-weight: 300;
-  color: black;
-}
-
-.card_prix {
-  font-family: "Roboto";
-  font-size: 15px;
-  font-weight: 700;
-  color: #353535;
-}
-
-.button_command, .footer_a_p {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 500;
-  color: #101010;
-}
-
-.menu_subtitle {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 300;
-  color: black;
-}
-
-.card_txt_title {
-  font-family: "Roboto";
-  font-size: 18px;
-  font-weight: 500;
-  color: #101010;
-}
-
-.footer_title {
-  font-family: "Shrikhand";
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.cards_content_title {
-  font-family: "Shrikhand";
-  font-size: 28px;
-  font-weight: 400;
+body {
+  background-color: black; /* a enlever */
 }
 
 .main_container, .card, .cards, .banner {
@@ -61,20 +18,29 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
-  max-width: 800px;
+}
+.main_container_add {
+  max-width: 640px;
+  background-color: white;
 }
 
-header {
+.header {
   width: 100%;
   height: 100px;
   display: flex;
+  background-color: #fff;
+  align-items: center;
 }
-
+.header_href {
+  margin-left: 17px;
+}
 .header_title {
   display: block; /* necessary to center */
   margin: auto;
+  padding-right: 60px; /* permet de decaler "ohmyfood" vers la gauche */
+  height: 34px;
 }
 
 footer {
@@ -82,9 +48,9 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
-  max-width: 800px;
+  max-width: 640px;
   background-color: #353535;
   color: #ffffff;
   align-items: flex-start;
@@ -93,26 +59,34 @@ footer {
 }
 
 .footer_a {
-  color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
   justify-content: flex-start;
   gap: 11px;
+  padding: 7px 0;
 }
 .footer_a_p {
-  color: #ffffff;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
 }
-.header {
-  align-items: center;
-}
-.header_href {
-  margin-left: 17px;
+.footer_title {
+  font-family: "Shrikhand";
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
 }
 
+@media (min-width: 1000px) { /* réglage à partir de 1000px et +  */
+  .main_container, .card, .cards, .banner, footer {
+    max-width: 1200px;
+  }
+}
 .banner_img {
   width: 100%;
   -o-object-fit: cover;
@@ -130,7 +104,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
   max-width: 341px;
   height: 29px;
@@ -140,8 +114,19 @@ footer {
   padding-top: 32px;
   justify-content: space-between;
 }
+.cards_content_title {
+  font-family: "Shrikhand";
+  font-size: 28px;
+  font-weight: 400;
+  color: #101010;
+}
+
 .menu_subtitle {
   width: 350px;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 300;
+  color: black;
   text-transform: uppercase;
   margin-top: 40px;
 }
@@ -164,6 +149,24 @@ footer {
   margin-top: 12px;
   padding: 15px;
 }
+.card_txt_title {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+.card_txt_subtitle {
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 300;
+  color: black;
+}
+.card_prix {
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 700;
+  color: #353535;
+}
 .card_bottom { /* center commaand button */
   margin-bottom: 65px;
 }
@@ -179,17 +182,20 @@ sur pages 2 a 5 */
 }
 
 .button_command {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
   width: 186px;
   height: 50px;
   margin: 0 0;
   border-radius: 25px;
-  color: #ffffff;
   background: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
   border: none;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);

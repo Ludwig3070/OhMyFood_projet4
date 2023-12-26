@@ -1,6 +1,8 @@
 @import "_mainVariables.scss";
 
-
+.header_href{
+  visibility: hidden;/* cache la fleche */
+}
 
 .search_bar {
   background-color: $Grey2;
@@ -10,8 +12,9 @@
   column-gap: 17px;
   height: 50px;
   box-shadow: 0px -1px 3px 2px rgba(0, 0, 0, 0.2);
+  margin: 2px;
   &_input {
-    @extend %roboto_16;
+    @include font("Roboto",16px,500,$Grey);
     border: none;
     background-color: $Grey2;
     order: 2;
@@ -33,12 +36,11 @@
   padding: 39px 0;
   &_title {
     @extend .main_container;
-    @extend %roboto_24;
+    @include font("Roboto",24px,700,black);
   }
   &_subtitle {
     @extend .main_container;
-    @extend %roboto_16;
-    color: $Grey;
+    @include font("Roboto",18px,300,$Grey);
     margin-top: 27px;
   }
   &_button {
@@ -49,11 +51,10 @@
   @extend .main_container;
   margin: 98px 0 48px 0;
   &_title {    
-    @extend %roboto_24;
+    @include font("Roboto",24px,700,black);
     position: absolute; 
     top: -50px; 
-    left: -13px;   
-       
+    left: -13px;      
   }
   &_container {
     @extend .main_container;
@@ -61,7 +62,7 @@
   }
   &_infoDiv {
     @extend .main_container;
-    @extend %roboto_16;
+    @include font("Roboto",16px,500,black);
     flex-direction: row;
     max-width: 305px;/* tu peux jouer pour modifier la largeur */
     height: 72px;
@@ -100,6 +101,8 @@
 }
 .card_restaurant{
   border-radius: 15px 15px 0 0;
+  position: relative;
+  width: fit-content;
   &_content{
     @include flex_display(row);
     justify-content: space-between;
@@ -107,25 +110,24 @@
   }
   &_txt_content{    
     &_title{
-      @extend %roboto_18_2;
+      @include font("Roboto",18px,700,black);
     }
     &_subtitle{
-      @extend %roboto_17;
+      @include font("Roboto",17px,300,black);
     }
   }
   &_img{
     object-fit: contain;
     border-radius: 15px 15px 0 0;
-    max-width: 320px;/* tu peux jouer avec la taille de card ici */    
+    max-width: 320px;/* tu peux jouer avec la taille de card ici */
+        
   }
 }
-.nouveau{
-  position: relative;
-}
+
 .nouveau::after{
     content: "Nouveau";
     @include flex_display;
-    @extend %roboto_14;
+    @include font("Roboto",14px,500,$Green-Font);
     width: 80px;
     height: 29px;
     background-color: $Green;
@@ -136,4 +138,86 @@
     right: 15px;        
 
 }
+  /* *************************************************************************** */
+@media (min-width:1000px){/* réglage à partir de 1000px et +  */
   
+  .appeal{
+    &_title{
+      flex-direction: row;
+      font-size: 40px;
+      column-gap: 13px;
+    }
+    &_subtitle{
+    flex-direction: row;
+  }
+  }
+  .how_to{
+    width: 80%;
+    &_container{      
+      flex-direction: row;
+      column-gap: 28px;}
+    &_infoDiv{
+      width: 300px;
+      height: 60px;
+      margin: 0;}
+    &_title{
+      left: -48px;/* realignement de "fonctionnement" */
+    }    
+  }
+  .restaurants{
+    background-color: $Grey2;
+    display: grid;
+    width: 100%;
+    padding-bottom: 30px;
+    justify-items: center;    
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:auto 1fr 1fr ;
+    row-gap: 50px;
+    &_href{
+      grid-column: 1/3;
+      grid-row: 1/1;
+    }
+    &_title{
+      font-size: 24px;
+      width: 100%;
+      display: block;
+      padding-left: 62px;/* alignement de restaurant */
+    }    
+  }
+ 
+  .card_restaurant{
+    
+    &_img{
+      max-width: 498px;
+      object-fit: fill;
+      width: 410px;
+      height: 140px;      
+    }
+    &_content{
+      background-color: white;
+      border: none;
+      margin-top: 0;
+      border-radius: 0 0 15px 15px;
+    }
+  }
+  footer{
+    flex-direction: row-reverse;
+    height: 54px;
+    
+  }
+  .footer{
+    &_nav{
+      @include flex_display;
+      width: 80%;
+      justify-content: flex-end;
+    }
+    &_a{
+      width: fit-content;
+      margin: 0;
+    }
+    &_p{
+      display: inline;;
+    }
+
+  } 
+}

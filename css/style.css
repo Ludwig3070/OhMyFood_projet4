@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,45 +9,8 @@ a {
   text-decoration: none;
 }
 
-.nouveau::after {
-  font-family: "Roboto";
-  font-size: 14px;
-  font-weight: 500;
-  color: #008766;
-}
-
-.how_to_infoDiv, .appeal_button, .appeal_subtitle, .search_bar_input, .footer_a_p {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 500;
-  color: #101010;
-}
-
-.card_restaurant_txt_content_subtitle {
-  font-family: "Roboto";
-  font-size: 17px;
-  font-weight: 300;
-  color: #101010;
-}
-
-.card_restaurant_txt_content_title {
-  font-family: "Roboto";
-  font-size: 18px;
-  font-weight: 700;
-  color: #101010;
-}
-
-.how_to_title, .appeal_title, .restaurants_title {
-  font-family: "Roboto";
-  font-size: 24px;
-  font-weight: 700;
-  color: #101010;
-}
-
-.footer_title {
-  font-family: "Shrikhand";
-  font-size: 18px;
-  font-weight: 400;
+body {
+  background-color: black; /* a enlever */
 }
 
 .main_container, .restaurants_href, .how_to_infoDiv_div, .how_to_infoDiv, .how_to_container, .how_to, .appeal_subtitle, .appeal_title, .restaurants_title, .appeal, .search_bar {
@@ -54,20 +18,29 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
-  max-width: 800px;
+}
+.main_container_add {
+  max-width: 640px;
+  background-color: white;
 }
 
-header {
+.header {
   width: 100%;
   height: 100px;
   display: flex;
+  background-color: #fff;
+  align-items: center;
 }
-
+.header_href {
+  margin-left: 17px;
+}
 .header_title {
   display: block; /* necessary to center */
   margin: auto;
+  padding-right: 60px; /* permet de decaler "ohmyfood" vers la gauche */
+  height: 34px;
 }
 
 footer {
@@ -75,9 +48,9 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
-  max-width: 800px;
+  max-width: 640px;
   background-color: #353535;
   color: #ffffff;
   align-items: flex-start;
@@ -86,19 +59,38 @@ footer {
 }
 
 .footer_a {
-  color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
   justify-content: flex-start;
   gap: 11px;
+  padding: 7px 0;
 }
 .footer_a_p {
-  color: #ffffff;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
 }
+.footer_title {
+  font-family: "Shrikhand";
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+
+@media (min-width: 1000px) { /* réglage à partir de 1000px et +  */
+  .main_container, .restaurants_href, .how_to_infoDiv_div, .how_to_infoDiv, .how_to_container, .how_to, .appeal_subtitle, .appeal_title, .restaurants_title, .appeal, .search_bar, footer {
+    max-width: 1200px;
+  }
+}
+.header_href {
+  visibility: hidden; /* cache la fleche */
+}
+
 .search_bar {
   background-color: #eaeaea;
   flex-direction: row;
@@ -106,8 +98,13 @@ footer {
        column-gap: 17px;
   height: 50px;
   box-shadow: 0px -1px 3px 2px rgba(0, 0, 0, 0.2);
+  margin: 2px;
 }
 .search_bar_input {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+  color: #353535;
   border: none;
   background-color: #eaeaea;
   order: 2;
@@ -127,22 +124,34 @@ footer {
   background-color: #F6F6F6;
   padding: 39px 0;
 }
+.appeal_title, .restaurants_title {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+}
 .appeal_subtitle {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 300;
   color: #353535;
   margin-top: 27px;
 }
 .appeal_button {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
   width: 218px;
   height: 50px;
   margin: 27px 0;
   border-radius: 25px;
-  color: #ffffff;
   background: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
   border: none;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
@@ -152,6 +161,10 @@ footer {
   margin: 98px 0 48px 0;
 }
 .how_to_title {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
   position: absolute;
   top: -50px;
   left: -13px;
@@ -160,6 +173,10 @@ footer {
   row-gap: 25px;
 }
 .how_to_infoDiv {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
   flex-direction: row;
   max-width: 305px; /* tu peux jouer pour modifier la largeur */
   height: 72px;
@@ -196,16 +213,31 @@ footer {
 
 .card_restaurant {
   border-radius: 15px 15px 0 0;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .card_restaurant_content {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
   justify-content: space-between;
   padding: 16px 13px;
+}
+.card_restaurant_txt_content_title {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
+.card_restaurant_txt_content_subtitle {
+  font-family: "Roboto";
+  font-size: 17px;
+  font-weight: 300;
+  color: black;
 }
 .card_restaurant_img {
   -o-object-fit: contain;
@@ -214,18 +246,18 @@ footer {
   max-width: 320px; /* tu peux jouer avec la taille de card ici */
 }
 
-.nouveau {
-  position: relative;
-}
-
 .nouveau::after {
   content: "Nouveau";
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100%; /* attention valeur tres importante à 100% de base */
   margin: auto;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
   width: 80px;
   height: 29px;
   background-color: #99e2d0;
@@ -234,4 +266,88 @@ footer {
   position: absolute;
   top: 15px;
   right: 15px;
+}
+
+/* *************************************************************************** */
+@media (min-width: 1000px) { /* réglage à partir de 1000px et +  */
+  .appeal_title, .restaurants_title {
+    flex-direction: row;
+    font-size: 40px;
+    -moz-column-gap: 13px;
+         column-gap: 13px;
+  }
+  .appeal_subtitle {
+    flex-direction: row;
+  }
+  .how_to {
+    width: 80%;
+  }
+  .how_to_container {
+    flex-direction: row;
+    -moz-column-gap: 28px;
+         column-gap: 28px;
+  }
+  .how_to_infoDiv {
+    width: 300px;
+    height: 60px;
+    margin: 0;
+  }
+  .how_to_title {
+    left: -48px; /* realignement de "fonctionnement" */
+  }
+  .restaurants {
+    background-color: #eaeaea;
+    display: grid;
+    width: 100%;
+    padding-bottom: 30px;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr 1fr;
+    row-gap: 50px;
+  }
+  .restaurants_href {
+    grid-column: 1/3;
+    grid-row: 1/1;
+  }
+  .restaurants_title {
+    font-size: 24px;
+    width: 100%;
+    display: block;
+    padding-left: 62px; /* alignement de restaurant */
+  }
+  .card_restaurant_img {
+    max-width: 498px;
+    -o-object-fit: fill;
+       object-fit: fill;
+    width: 410px;
+    height: 140px;
+  }
+  .card_restaurant_content {
+    background-color: white;
+    border: none;
+    margin-top: 0;
+    border-radius: 0 0 15px 15px;
+  }
+  footer {
+    flex-direction: row-reverse;
+    height: 54px;
+  }
+  .footer_nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* attention valeur tres importante à 100% de base */
+    margin: auto;
+    width: 80%;
+    justify-content: flex-end;
+  }
+  .footer_a {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0;
+  }
+  .footer_p {
+    display: inline;
+  }
 }/*# sourceMappingURL=style.css.map */
