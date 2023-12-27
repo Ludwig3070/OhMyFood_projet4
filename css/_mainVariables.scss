@@ -10,86 +10,87 @@ $Grey: #353535;
 $Secondary: #ff79da;
 $tertiary: #99e2d0;
 $Grey2: #eaeaea;
-$Background: #F6F6F6;
+$Background: #f6f6f6;
 //width
 $max_width: 640px;
-$max_width_desk: 1080px;
+$max_width_desk: 1440px;
 $card_width: 350px;
-$cards_up:70px;
+$cards_up: 70px;
 
 //general used
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-a{
+a {
   text-decoration: none;
 }
-body{
-  background-color:black;/* a enlever */   
+body {
+  background-color: black; /* a enlever */
 }
 
 //initial argument: row
-@mixin flex_display($value: row,$width:100%,$margin:auto) {
+@mixin flex_display($value: row, $width: 100%, $margin: auto) {
   display: flex;
   flex-direction: $value;
   align-items: center;
   justify-content: center;
-  width: $width;/* attention valeur tres importante à 100% de base */
+  width: $width; /* attention valeur tres importante à 100% de base */
   margin: $margin;
 }
 //button module
-@mixin button($width:218px,$height:50px,$margin:27px) {
-  @include font("Roboto",16px,500,white);
+@mixin button($width: 218px, $height: 50px, $margin: 27px) {
+  @include font("Roboto", 16px, 500, white);
   @include flex_display;
   width: $width;
   height: $height;
   margin: $margin 0;
   border-radius: 25px;
-  background: linear-gradient(
-    193deg,
-    $Primary -11.44%,
-    $Secondary 123.93%
-  );
+  background: linear-gradient(193deg, $Primary -11.44%, $Secondary 123.93%);
   border: none;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);  
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
-@mixin font($name:"Roboto",$font_size:14px,$font_weight:500,$color:$Green-font){
+@mixin font(
+  $name: "Roboto",
+  $font_size: 14px,
+  $font_weight: 500,
+  $color: $Green-font
+) {
   font-family: $name;
-  font-size:$font_size ;
+  font-size: $font_size;
   font-weight: $font_weight;
   color: $color;
 }
 
-
 //main for all
 .main_container {
   @include flex_display(column);
-  &_add{
+  &_add {
     max-width: $max_width;
     background-color: white;
-  } 
+  }
 }
-//header for all 
+//header for all
 .header {
   width: 100%;
   height: 100px;
   display: flex;
   background-color: #fff;
   align-items: center;
-  &_href{margin-left: 17px;}
-  &_title{
+  &_href {
+    margin-left: 17px;
+  }
+  &_title {
     display: block; /* necessary to center */
     margin: auto;
-    padding-right: 60px;/* permet de decaler "ohmyfood" vers la gauche */
-    height:34px;
-  }    
+    padding-right: 60px; /* permet de decaler "ohmyfood" vers la gauche */
+    height: 34px;
+  }
 }
-  
 
 //footer for all
-footer{
+footer {
   @include flex_display(column);
   max-width: $max_width;
   background-color: $Grey;
@@ -98,20 +99,68 @@ footer{
   row-gap: 16px;
   padding: 22px 25px;
 }
-.footer{
-  &_a{
+.footer {
+  &_a {
     @include flex_display;
     justify-content: flex-start;
     gap: 11px;
     padding: 7px 0;
-    &_p{
-        @include font("Roboto",16px,400,white);
-        &_max{ @include font("Roboto",16px,500,white);}
+    &_p {
+      @include font("Roboto", 16px, 400, white);
+      &_max {
+        @include font("Roboto", 16px, 500, white);
+      }
     }
   }
-  &_title{@include font("Shrikhand",18px,400,white);}
+  &_title {
+    @include font("Shrikhand", 18px, 400, white);
+  }
 }
 /* ********************************************************************* */
-@media (min-width:1000px){/* réglage à partir de 1080px et +  */
-  .main_container,footer {max-width: $max_width_desk;}
+@media (min-width: 1080px) {
+  /* réglage à partir de 1080px et +  */
+  .main_container,
+  footer {
+    max-width: $max_width_desk;
+  }
+  .header {
+    height: 70px;
+    z-index: 10;
+  }
+ 
+
+  footer {
+    flex-direction: row-reverse;
+    height: 114px;
+    align-items: center;
+    padding: 0;
+    justify-content: flex-start;
+    margin-bottom: auto; /* permet de laisser un blanc en dessous du footer */
+  }
+  /* j'ai mis des width sur les elements pour pouvoirles aligner parfaitement comme sur la maquettte*/
+  .footer {
+    &_title {
+      display: flex;
+      height: 54px;
+      align-items: flex-end;
+      width: 139px;
+    }
+    &_nav {
+      display: flex;
+      height: 54px;
+      align-items: flex-end;
+    }
+    &_a {
+      width: auto;
+      padding: 0;
+      margin: 0;
+      margin-left: 7px;
+      &_p {
+        width: 130px;
+        &_max {
+          width: 168px;
+        }
+      }
+    }
+  }
 }

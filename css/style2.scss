@@ -1,5 +1,5 @@
 @import "_mainVariables.scss";
-
+/* https://www.youtube.com/watch?v=u_meeb8kdgI */
 .banner{
     @extend .main_container;
     &_img{
@@ -82,3 +82,41 @@ body{
     position: absolute;
     bottom: 40px;
 }
+/* ********************************************************************* */
+@media (min-width:1080px){/* réglage à partir de 1080px et +  */
+    .main_container,footer {max-width: $max_width_desk;}
+    .main_container{background-color: #fff;}
+    .banner_img{
+        height: 381px;
+        width: 100%; 
+        object-fit:cover;
+        object-position: 0 58% ;              
+    }
+    .cards{
+        transform: translateY(-40px);/* remontée d'image */
+        width: 1055px;
+        background-color: $Background;
+        &_content{
+            &_title{
+                padding-top: 51px;
+            }
+        }
+    }
+    .card{
+        width: 635px;
+        &_prix{
+            align-self: flex-end;
+        }
+    }
+    .menu_subtitle{
+        display: flex;
+        position: relative;
+        width: 635px;
+        &::after{
+            position: absolute;
+            border-bottom: 3px solid $Green;
+            bottom: -10px;
+             
+        }
+    }
+  }

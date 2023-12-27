@@ -89,11 +89,50 @@ footer {
 }
 
 /* ********************************************************************* */
-@media (min-width: 1000px) { /* réglage à partir de 1080px et +  */
-  .main_container, .card, .cards, .banner, footer {
-    max-width: 1080px;
+@media (min-width: 1080px) {
+  /* réglage à partir de 1080px et +  */
+  .main_container, .card, .cards, .banner,
+  footer {
+    max-width: 1440px;
+  }
+  .header {
+    height: 70px;
+    z-index: 10;
+  }
+  footer {
+    flex-direction: row-reverse;
+    height: 114px;
+    align-items: center;
+    padding: 0;
+    justify-content: flex-start;
+    margin-bottom: auto; /* permet de laisser un blanc en dessous du footer */
+  }
+  /* j'ai mis des width sur les elements pour pouvoirles aligner parfaitement comme sur la maquettte*/
+  .footer_title {
+    display: flex;
+    height: 54px;
+    align-items: flex-end;
+    width: 139px;
+  }
+  .footer_nav {
+    display: flex;
+    height: 54px;
+    align-items: flex-end;
+  }
+  .footer_a {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    margin-left: 7px;
+  }
+  .footer_a_p {
+    width: 130px;
+  }
+  .footer_a_p_max {
+    width: 168px;
   }
 }
+/* https://www.youtube.com/watch?v=u_meeb8kdgI */
 .banner_img {
   width: 100%;
   -o-object-fit: cover;
@@ -101,7 +140,7 @@ footer {
 }
 
 .cards {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   transform: translateY(-70px); /* remontée d'image */
   border-radius: 40px 40px 0 0;
   padding: 0 15px;
@@ -183,7 +222,7 @@ body {
 }
 
 .main_container, .banner, .cards, .card {
-  background-color: #F6F6F6; /* permet d'effacer visuellement la marge entre le footer et.main due à la remontée
+  background-color: #f6f6f6; /* permet d'effacer visuellement la marge entre le footer et.main due à la remontée
 sur pages 2 a 5 */
   position: relative;
 }
@@ -208,4 +247,46 @@ sur pages 2 a 5 */
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   position: absolute;
   bottom: 40px;
+}
+
+/* ********************************************************************* */
+@media (min-width: 1080px) { /* réglage à partir de 1080px et +  */
+  .main_container, .banner, .cards, .card, footer {
+    max-width: 1440px;
+  }
+  .main_container, .banner, .cards, .card {
+    background-color: #fff;
+  }
+  .banner_img {
+    height: 381px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 0 58%;
+       object-position: 0 58%;
+  }
+  .cards {
+    transform: translateY(-40px); /* remontée d'image */
+    width: 1055px;
+    background-color: #f6f6f6;
+  }
+  .cards_content_title {
+    padding-top: 51px;
+  }
+  .card {
+    width: 635px;
+  }
+  .card_prix {
+    align-self: flex-end;
+  }
+  .menu_subtitle {
+    display: flex;
+    position: relative;
+    width: 635px;
+  }
+  .menu_subtitle::after {
+    position: absolute;
+    border-bottom: 3px solid #99e2d0;
+    bottom: -10px;
+  }
 }/*# sourceMappingURL=style2.css.map */
