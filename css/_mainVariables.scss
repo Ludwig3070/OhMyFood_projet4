@@ -13,7 +13,7 @@ $Grey2: #eaeaea;
 $Background: #F6F6F6;
 //width
 $max_width: 640px;
-$max_width_desk: 1200px;
+$max_width_desk: 1080px;
 $card_width: 350px;
 $cards_up:70px;
 
@@ -27,8 +27,7 @@ a{
   text-decoration: none;
 }
 body{
-  background-color:black;/* a enlever */
-   
+  background-color:black;/* a enlever */   
 }
 
 //initial argument: row
@@ -39,7 +38,7 @@ body{
   justify-content: center;
   width: $width;/* attention valeur tres importante à 100% de base */
   margin: $margin;
-  }
+}
 //button module
 @mixin button($width:218px,$height:50px,$margin:27px) {
   @include font("Roboto",16px,500,white);
@@ -70,25 +69,23 @@ body{
   &_add{
     max-width: $max_width;
     background-color: white;
-  }
-  
-  
+  } 
 }
 //header for all 
 .header {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    background-color: #fff;
-    align-items: center;
-    &_href{margin-left: 17px;}
-    &_title{
-      display: block; /* necessary to center */
-      margin: auto;
-      padding-right: 60px;/* permet de decaler "ohmyfood" vers la gauche */
-      height:34px;
-    }    
-  }
+  width: 100%;
+  height: 100px;
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  &_href{margin-left: 17px;}
+  &_title{
+    display: block; /* necessary to center */
+    margin: auto;
+    padding-right: 60px;/* permet de decaler "ohmyfood" vers la gauche */
+    height:34px;
+  }    
+}
   
 
 //footer for all
@@ -108,12 +105,13 @@ footer{
     gap: 11px;
     padding: 7px 0;
     &_p{
-      @include font("Roboto",16px,500,white);}}
-  &_title{
-    @include font("Shrikhand",18px,400,white);}  
-}
-
-@media (min-width:1000px){/* réglage à partir de 1000px et +  */
-  .main_container,footer {max-width: $max_width_desk;    
+        @include font("Roboto",16px,400,white);
+        &_max{ @include font("Roboto",16px,500,white);}
+    }
   }
+  &_title{@include font("Shrikhand",18px,400,white);}
+}
+/* ********************************************************************* */
+@media (min-width:1000px){/* réglage à partir de 1080px et +  */
+  .main_container,footer {max-width: $max_width_desk;}
 }

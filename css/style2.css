@@ -72,6 +72,12 @@ footer {
 .footer_a_p {
   font-family: "Roboto";
   font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+.footer_a_p_max {
+  font-family: "Roboto";
+  font-size: 16px;
   font-weight: 500;
   color: white;
 }
@@ -82,9 +88,10 @@ footer {
   color: white;
 }
 
-@media (min-width: 1000px) { /* réglage à partir de 1000px et +  */
+/* ********************************************************************* */
+@media (min-width: 1000px) { /* réglage à partir de 1080px et +  */
   .main_container, .card, .cards, .banner, footer {
-    max-width: 1200px;
+    max-width: 1080px;
   }
 }
 .banner_img {
