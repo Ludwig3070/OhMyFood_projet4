@@ -97,7 +97,6 @@ footer {
   }
   .header {
     height: 70px;
-    z-index: 10;
   }
   footer {
     flex-direction: row-reverse;
@@ -137,6 +136,7 @@ footer {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  height: 426px; /* maintien la bonne hauteur car img trop grande */
 }
 
 .cards {
@@ -213,7 +213,7 @@ footer {
   font-weight: 700;
   color: #353535;
 }
-.card_bottom { /* center commaand button */
+.card_bottom { /* center command button */
   margin-bottom: 65px;
 }
 
@@ -268,9 +268,13 @@ sur pages 2 a 5 */
   .cards {
     transform: translateY(-40px); /* remontée d'image */
     width: 1055px;
+    margin-bottom: -40px; /* comble le trou en bas laissé par le translate */
     background-color: #f6f6f6;
   }
   .cards_content_title {
+    padding-top: 51px;
+  }
+  .cards_content_logo {
     padding-top: 51px;
   }
   .card {
@@ -279,10 +283,16 @@ sur pages 2 a 5 */
   .card_prix {
     align-self: flex-end;
   }
+  .card_bottom {
+    /* center command button */
+    margin-bottom: 130px;
+    /* 40px est le margin demandé */
+  }
   .menu_subtitle {
     display: flex;
     position: relative;
     width: 635px;
+    margin-bottom: 12px;
   }
   .menu_subtitle::after {
     position: absolute;

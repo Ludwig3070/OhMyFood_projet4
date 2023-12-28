@@ -16,6 +16,8 @@ $max_width: 640px;
 $max_width_desk: 1440px;
 $card_width: 350px;
 $cards_up: 70px;
+$cards_up_desktop: 40px;
+$button_height:50px;
 
 //general used
 * {
@@ -40,11 +42,11 @@ body {
   margin: $margin;
 }
 //button module
-@mixin button($width: 218px, $height: 50px, $margin: 27px) {
+@mixin button($width: 218px, $button_height:$button_height, $margin: 27px) {
   @include font("Roboto", 16px, 500, white);
   @include flex_display;
   width: $width;
-  height: $height;
+  height: $button_height;
   margin: $margin 0;
   border-radius: 25px;
   background: linear-gradient(193deg, $Primary -11.44%, $Secondary 123.93%);
@@ -125,7 +127,6 @@ footer {
   }
   .header {
     height: 70px;
-    z-index: 10;
   }
  
 

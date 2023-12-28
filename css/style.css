@@ -97,7 +97,6 @@ footer {
   }
   .header {
     height: 70px;
-    z-index: 10;
   }
   footer {
     flex-direction: row-reverse;
@@ -223,7 +222,7 @@ footer {
   font-weight: 500;
   color: black;
   flex-direction: row;
-  max-width: 305px; /* tu peux jouer pour modifier la largeur */
+  max-width: 322px; /* tu peux jouer pour modifier la largeur */
   height: 72px;
   background-color: #f6f6f6;
   border-radius: 20px;
@@ -254,7 +253,7 @@ footer {
 }
 
 .card_restaurant {
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px;
   box-shadow: 2px 3px 11px -1px rgba(0, 0, 0, 0.1);
   position: relative;
   width: -moz-fit-content;
@@ -270,6 +269,7 @@ footer {
   justify-content: space-between;
   padding: 16px 13px;
   margin-bottom: 18px;
+  border-radius: 0 0 15px 15px;
 }
 .card_restaurant_txt_content_title {
   font-family: "Roboto";
@@ -287,7 +287,7 @@ footer {
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 15px 15px 0 0;
-  max-width: 320px; /* tu peux jouer avec la taille de card ici */
+  max-width: 340px; /* tu peux jouer avec la taille de card ici */
 }
 
 .nouveau::after {
@@ -342,7 +342,7 @@ footer {
     margin: 0;
   }
   .restaurants {
-    background-color: #ffffff;
+    background-color: #f6f6f6;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
@@ -362,6 +362,15 @@ footer {
     display: block;
     margin-bottom: -26px;
   }
+  .restaurants_content {
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* attention valeur tres importante à 100% de base */
+    margin: auto;
+  }
   .card_restaurant {
     box-shadow: 2px 3px 11px -1px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -375,14 +384,8 @@ footer {
   }
   .card_restaurant_content {
     background-color: white;
-    border: none;
-    margin-top: 0;
-    border-radius: 0 0 15px 15px;
+    margin-top: -3px; /* enleve un gap */
     height: 60px;
-  }
-  .background_gap {
-    background-color: #fff;
-    border-radius: 15px;
   }
   .search_bar {
     box-shadow: unset;

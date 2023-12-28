@@ -4,7 +4,8 @@
     @extend .main_container;
     &_img{
         width:100%;
-        object-fit: cover;        
+        object-fit: cover;
+        height: 426px; /* maintien la bonne hauteur car img trop grande */       
     }
 }
 .cards{
@@ -64,7 +65,7 @@
     &_prix{
         @include font("Roboto",15px,700,$Grey);
     }
-    &_bottom{/* center commaand button */
+    &_bottom{/* center command button */
         margin-bottom: 65px;
     }
 }
@@ -93,25 +94,35 @@ body{
         object-position: 0 58% ;              
     }
     .cards{
-        transform: translateY(-40px);/* remontée d'image */
+        transform: translateY(-$cards_up_desktop);/* remontée d'image */
         width: 1055px;
+        margin-bottom: -$cards_up_desktop;/* comble le trou en bas laissé par le translate */
         background-color: $Background;
         &_content{
             &_title{
                 padding-top: 51px;
             }
+            &_logo{
+                padding-top: 51px;
+            }
         }
     }
-    .card{
+    .card {
         width: 635px;
         &_prix{
             align-self: flex-end;
+        }
+        &_bottom{
+            /* center command button */
+            margin-bottom: calc($cards_up_desktop + $button_height + 40px);
+            /* 40px est le margin demandé */
         }
     }
     .menu_subtitle{
         display: flex;
         position: relative;
         width: 635px;
+        margin-bottom: 12px;
         &::after{
             position: absolute;
             border-bottom: 3px solid $Green;
@@ -119,4 +130,4 @@ body{
              
         }
     }
-  }
+}
