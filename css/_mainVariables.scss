@@ -38,7 +38,7 @@ body {
   flex-direction: $value;
   align-items: center;
   justify-content: center;
-  width: $width; /* attention valeur tres importante à 100% de base */
+  width: $width; /* very important value at 100% basic */
   margin: $margin;
 }
 //button module
@@ -53,12 +53,7 @@ body {
   border: none;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
-@mixin font(
-  $name: "Roboto",
-  $font_size: 14px,
-  $font_weight: 500,
-  $color: $Green-font
-) {
+@mixin font($name: "Roboto",$font_size: 14px,$font_weight: 500,$color: $Green-font) {
   font-family: $name;
   font-size: $font_size;
   font-weight: $font_weight;
@@ -86,7 +81,7 @@ body {
   &_title {
     display: block; /* necessary to center */
     margin: auto;
-    padding-right: 60px; /* permet de decaler "ohmyfood" vers la gauche */
+    padding-right: 60px; /* allows you to shift "ohmyfood" to the left */
     height: 34px;
   }
 }
@@ -117,10 +112,11 @@ footer {
   &_title {
     @include font("Shrikhand", 18px, 400, white);
   }
+  
 }
 /* ********************************************************************* */
 @media (min-width: 1080px) {
-  /* réglage à partir de 1080px et +  */
+  /* adjustment from 1080px and +  */
   .main_container,
   footer {
     max-width: $max_width_desk;
@@ -136,9 +132,9 @@ footer {
     align-items: center;
     padding: 0;
     justify-content: flex-start;
-    margin-bottom: auto; /* permet de laisser un blanc en dessous du footer */
+    margin-bottom: auto; /* allows you to leave a space below the footer*/
   }
-  /* j'ai mis des width sur les elements pour pouvoirles aligner parfaitement comme sur la maquettte*/
+  /* I put widths on the elements to be able to align them perfectly as on the FIGMA model */
   .footer {
     &_title {
       display: flex;
@@ -163,5 +159,25 @@ footer {
         }
       }
     }
+  }
+}
+/* ************************common decoration******************************************* */
+.appeal_button:hover,
+.button_command:hover {
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.81, 1.68);
+  opacity: 0.8;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.44);
+}
+#la_palette_du_gout_heart_container_check_click,
+#a_la_francaise_heart_container_check_click,
+#le_delice_des_sens_heart_container_check_click,
+#la_note_enchantee_heart_container_check_click {display: none;}
+/* common code for the 4 hearts of the index.html page */
+input:checked +label{opacity: 0;}
+.heart_container{
+  &_toggle_content{position: relative;}
+  &1_image {
+    cursor: crosshair; 
+    position: absolute; 
   }
 }

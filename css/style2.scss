@@ -1,17 +1,19 @@
-@import "_mainVariables.scss";
-/* https://www.youtube.com/watch?v=u_meeb8kdgI */
+@import "_mainVariables.scss";/* import common datas */
+
+
+
 .banner{
     @extend .main_container;
     &_img{
         width:100%;
         object-fit: cover;
-        height: 426px; /* maintien la bonne hauteur car img trop grande */       
+        height: 426px; /*give the correct height because the image is too big */       
     }
 }
 .cards{
     background-color: $Background;
     @extend .main_container;
-    transform: translateY(-$cards_up);/* remontée d'image */
+    transform: translateY(-$cards_up);/* image lift */
     border-radius: 40px 40px 0 0;
     padding: 0 15px;
     
@@ -48,7 +50,7 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
-    max-width: $card_width; /* permet de reduire un peu plus  */
+    max-width: $card_width; /* allows us to reduce a little more */
     height: 70px;
     border-radius: 15px;
     box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.10);
@@ -73,9 +75,8 @@ body{
     background-color: $Black;
 }
 .main_container{
-    background-color: $Background; /* permet d'effacer visuellement la marge entre le footer et.main due à la remontée
-  sur pages 2 a 5 */
-  position: relative;
+    background-color: $Background; /*allows you to visually erase the margin between the footer and .main due to the rise on pages 2 to 5 */ 
+    position: relative;
 }
 
 .button_command{
@@ -83,8 +84,11 @@ body{
     position: absolute;
     bottom: 40px;
 }
+ /* adjustment of the positon of the hearts on pages 2 to 5  */  
+ .heart_container{translate: 0 4px;}
+
 /* ********************************************************************* */
-@media (min-width:1080px){/* réglage à partir de 1080px et +  */
+@media (min-width:1080px){/* adjustment from 1080px and + */
     .main_container,footer {max-width: $max_width_desk;}
     .main_container{background-color: #fff;}
     .banner_img{
@@ -94,11 +98,13 @@ body{
         object-position: 0 58% ;              
     }
     .cards{
-        transform: translateY(-$cards_up_desktop);/* remontée d'image */
+        transform: translateY(-$cards_up_desktop);/*image lift  */
         width: 1055px;
-        margin-bottom: -$cards_up_desktop;/* comble le trou en bas laissé par le translate */
+        margin-bottom: -$cards_up_desktop;/* fills the hole at the bottom left by the translate */
         background-color: $Background;
         &_content{
+            justify-content: center;
+            column-gap: 22px;
             &_title{
                 padding-top: 51px;
             }
@@ -115,7 +121,7 @@ body{
         &_bottom{
             /* center command button */
             margin-bottom: calc($cards_up_desktop + $button_height + 40px);
-            /* 40px est le margin demandé */
+            /*40px is the requested margin  */
         }
     }
     .menu_subtitle{
@@ -126,8 +132,13 @@ body{
         &::after{
             position: absolute;
             border-bottom: 3px solid $Green;
-            bottom: -10px;
-             
+            bottom: -10px;             
         }
     }
+    /* adjustmentof the position of the hearts on pages 2 to 5  */  
+    .heart_container{translate: 0 28px;}
 }
+
+
+
+    

@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
 }
 .main_container_add {
@@ -39,7 +39,7 @@ body {
 .header_title {
   display: block; /* necessary to center */
   margin: auto;
-  padding-right: 60px; /* permet de decaler "ohmyfood" vers la gauche */
+  padding-right: 60px; /* allows you to shift "ohmyfood" to the left */
   height: 34px;
 }
 
@@ -48,7 +48,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
   max-width: 640px;
   background-color: #353535;
@@ -63,7 +63,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
   justify-content: flex-start;
   gap: 11px;
@@ -90,7 +90,7 @@ footer {
 
 /* ********************************************************************* */
 @media (min-width: 1080px) {
-  /* réglage à partir de 1080px et +  */
+  /* adjustment from 1080px and +  */
   .main_container, .restaurants_href, .how_to_infoDiv_div, .how_to_infoDiv, .how_to_container, .how_to, .appeal_subtitle, .appeal_title, .restaurants_title, .appeal, .search_bar,
   footer {
     max-width: 1440px;
@@ -104,9 +104,9 @@ footer {
     align-items: center;
     padding: 0;
     justify-content: flex-start;
-    margin-bottom: auto; /* permet de laisser un blanc en dessous du footer */
+    margin-bottom: auto; /* allows you to leave a space below the footer*/
   }
-  /* j'ai mis des width sur les elements pour pouvoirles aligner parfaitement comme sur la maquettte*/
+  /* I put widths on the elements to be able to align them perfectly as on the FIGMA model */
   .footer_title {
     display: flex;
     height: 54px;
@@ -131,6 +131,34 @@ footer {
     width: 168px;
   }
 }
+/* ************************common decoration******************************************* */
+.appeal_button:hover,
+.button_command:hover {
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.81, 1.68);
+  opacity: 0.8;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.44);
+}
+
+#la_palette_du_gout_heart_container_check_click,
+#a_la_francaise_heart_container_check_click,
+#le_delice_des_sens_heart_container_check_click,
+#la_note_enchantee_heart_container_check_click {
+  display: none;
+}
+
+/* common code for the 4 hearts of the index.html page */
+input:checked + label {
+  opacity: 0;
+}
+
+.heart_container_toggle_content {
+  position: relative;
+}
+.heart_container1_image {
+  cursor: crosshair;
+  position: absolute;
+}
+
 .header_href {
   visibility: hidden; /* cache la fleche */
 }
@@ -190,7 +218,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
   width: 218px;
   height: 50px;
@@ -264,7 +292,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
   justify-content: space-between;
   padding: 16px 13px;
@@ -296,7 +324,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
   font-family: "Roboto";
   font-size: 14px;
@@ -368,7 +396,7 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%; /* attention valeur tres importante à 100% de base */
+    width: 100%; /* very important value at 100% basic */
     margin: auto;
   }
   .card_restaurant {

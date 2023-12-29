@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,7 +17,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
 }
 .main_container_add {
@@ -39,7 +38,7 @@ body {
 .header_title {
   display: block; /* necessary to center */
   margin: auto;
-  padding-right: 60px; /* permet de decaler "ohmyfood" vers la gauche */
+  padding-right: 60px; /* allows you to shift "ohmyfood" to the left */
   height: 34px;
 }
 
@@ -48,7 +47,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
   max-width: 640px;
   background-color: #353535;
@@ -63,7 +62,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
   justify-content: flex-start;
   gap: 11px;
@@ -90,7 +89,7 @@ footer {
 
 /* ********************************************************************* */
 @media (min-width: 1080px) {
-  /* réglage à partir de 1080px et +  */
+  /* adjustment from 1080px and +  */
   .main_container, .card, .cards, .banner,
   footer {
     max-width: 1440px;
@@ -104,9 +103,9 @@ footer {
     align-items: center;
     padding: 0;
     justify-content: flex-start;
-    margin-bottom: auto; /* permet de laisser un blanc en dessous du footer */
+    margin-bottom: auto; /* allows you to leave a space below the footer*/
   }
-  /* j'ai mis des width sur les elements pour pouvoirles aligner parfaitement comme sur la maquettte*/
+  /* I put widths on the elements to be able to align them perfectly as on the FIGMA model */
   .footer_title {
     display: flex;
     height: 54px;
@@ -131,17 +130,45 @@ footer {
     width: 168px;
   }
 }
-/* https://www.youtube.com/watch?v=u_meeb8kdgI */
+/* ************************common decoration******************************************* */
+.appeal_button:hover,
+.button_command:hover {
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.81, 1.68);
+  opacity: 0.8;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.44);
+}
+
+#la_palette_du_gout_heart_container_check_click,
+#a_la_francaise_heart_container_check_click,
+#le_delice_des_sens_heart_container_check_click,
+#la_note_enchantee_heart_container_check_click {
+  display: none;
+}
+
+/* common code for the 4 hearts of the index.html page */
+input:checked + label {
+  opacity: 0;
+}
+
+.heart_container_toggle_content {
+  position: relative;
+}
+.heart_container1_image {
+  cursor: crosshair;
+  position: absolute;
+}
+
+/* import common datas */
 .banner_img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 426px; /* maintien la bonne hauteur car img trop grande */
+  height: 426px; /*give the correct height because the image is too big */
 }
 
 .cards {
   background-color: #f6f6f6;
-  transform: translateY(-70px); /* remontée d'image */
+  transform: translateY(-70px); /* image lift */
   border-radius: 40px 40px 0 0;
   padding: 0 15px;
 }
@@ -150,7 +177,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
   max-width: 341px;
   height: 29px;
@@ -188,7 +215,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   background-color: white;
-  max-width: 350px; /* permet de reduire un peu plus  */
+  max-width: 350px; /* allows us to reduce a little more */
   height: 70px;
   border-radius: 15px;
   box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.1);
@@ -222,8 +249,7 @@ body {
 }
 
 .main_container, .banner, .cards, .card {
-  background-color: #f6f6f6; /* permet d'effacer visuellement la marge entre le footer et.main due à la remontée
-sur pages 2 a 5 */
+  background-color: #f6f6f6; /*allows you to visually erase the margin between the footer and .main due to the rise on pages 2 to 5 */
   position: relative;
 }
 
@@ -236,7 +262,7 @@ sur pages 2 a 5 */
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%; /* attention valeur tres importante à 100% de base */
+  width: 100%; /* very important value at 100% basic */
   margin: auto;
   width: 186px;
   height: 50px;
@@ -249,8 +275,13 @@ sur pages 2 a 5 */
   bottom: 40px;
 }
 
+/* adjustment of the positon of the hearts on pages 2 to 5  */
+.heart_container {
+  translate: 0 4px;
+}
+
 /* ********************************************************************* */
-@media (min-width: 1080px) { /* réglage à partir de 1080px et +  */
+@media (min-width: 1080px) { /* adjustment from 1080px and + */
   .main_container, .banner, .cards, .card, footer {
     max-width: 1440px;
   }
@@ -266,10 +297,15 @@ sur pages 2 a 5 */
        object-position: 0 58%;
   }
   .cards {
-    transform: translateY(-40px); /* remontée d'image */
+    transform: translateY(-40px); /*image lift  */
     width: 1055px;
-    margin-bottom: -40px; /* comble le trou en bas laissé par le translate */
+    margin-bottom: -40px; /* fills the hole at the bottom left by the translate */
     background-color: #f6f6f6;
+  }
+  .cards_content {
+    justify-content: center;
+    -moz-column-gap: 22px;
+         column-gap: 22px;
   }
   .cards_content_title {
     padding-top: 51px;
@@ -286,7 +322,7 @@ sur pages 2 a 5 */
   .card_bottom {
     /* center command button */
     margin-bottom: 130px;
-    /* 40px est le margin demandé */
+    /*40px is the requested margin  */
   }
   .menu_subtitle {
     display: flex;
@@ -298,5 +334,9 @@ sur pages 2 a 5 */
     position: absolute;
     border-bottom: 3px solid #99e2d0;
     bottom: -10px;
+  }
+  /* adjustmentof the position of the hearts on pages 2 to 5  */
+  .heart_container {
+    translate: 0 28px;
   }
 }/*# sourceMappingURL=style2.css.map */

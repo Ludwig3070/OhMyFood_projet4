@@ -1,5 +1,7 @@
 @import "_mainVariables.scss";
 
+
+
 .header_href{
   visibility: hidden;/* cache la fleche */
 }
@@ -44,7 +46,7 @@
     margin-top: 27px;
   }
   &_button {
-    @include button;
+    @include button;   
   }
 }
 .how_to {
