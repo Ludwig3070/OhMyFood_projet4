@@ -7,7 +7,7 @@
     &_img{
         width:100%;
         object-fit: cover;
-        height: 426px; /*give the correct height because the image is too big */       
+        height: 275px; /*give the correct height because the image is too big */       
     }
 }
 .cards{
@@ -19,12 +19,10 @@
     
     &_content{
         @include flex_display;
-        max-width: 341px;
-        height: 29px;
-        margin: 0;
-        column-gap: 30px;
-        padding-top: 32px ;
-        justify-content: space-between;
+        justify-content: flex-start;
+        padding-left: 10px;      
+        padding-top:32px;
+        position: relative;        
         &_title{
             @include font("Shrikhand",28px,400,$Black);           
         }
@@ -44,32 +42,61 @@
         padding-bottom: 9px;       
         }
        }
-
 .card{
     @extend .main_container;
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
-    max-width: $card_width; /* allows us to reduce a little more */
+    max-width: $card_width; /* allows us to reduce a little  */
     height: 70px;
     border-radius: 15px;
     box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.10);
     margin-top: 12px;
     padding: 15px;
     &_txt{
+        width:$cards_txt_width_max;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         &_title{
             @include font("Roboto",18px,500,black);
+            max-width: $cards_txt_width_max;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
         &_subtitle{
             @include font("Roboto",15px,300,black);
+            max-width:$cards_txt_width_max;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
     }
     &_prix{
         @include font("Roboto",15px,700,$Grey);
+        @include flex_display(row,auto);
+        align-items: flex-end;
+        height: 40px;
+        margin: 0;
     }
     &_bottom{/* center command button */
         margin-bottom: 65px;
     }
+ /*    &:hover{
+        padding-right: $cards_left;
+        transition: padding 0.4s ease-in-out;        
+    }
+    &:hover::after{
+        content: "";
+        width: 50px;
+        height: 100%;
+        padding: 0;
+        background-color: $Green;
+    }
+         */
+   
+ 
 }
 body{
     background-color: $Black;
@@ -77,6 +104,7 @@ body{
 .main_container{
     background-color: $Background; /*allows you to visually erase the margin between the footer and .main due to the rise on pages 2 to 5 */ 
     position: relative;
+    max-width: $max_width;/* allows only $max_width width */
 }
 
 .button_command{
@@ -84,8 +112,27 @@ body{
     position: absolute;
     bottom: 40px;
 }
- /* adjustment of the positon of the hearts on pages 2 to 5  */  
- .heart_container{translate: 0 4px;}
+ /* animation display of the dishes on pages 2 to 4 */  
+ .heart_container{
+    top: 60%;    
+    right: 5%;
+ }
+ @for $i from 0 through 12{
+    .hidden_#{$i}{opacity: 0;}
+  }
+  @keyframes visibility_on {
+    100%{opacity:1}
+  } 
+  
+  @for $i from 0 through 12{
+   
+    .hidden_#{$i}{
+      animation: visibility_on 0.3s ease-out (#{$i/2*0.1}s) forwards;
+    }
+  }
+  
+
+    
 
 /* ********************************************************************* */
 @media (min-width:1080px){/* adjustment from 1080px and + */
@@ -104,7 +151,7 @@ body{
         background-color: $Background;
         &_content{
             justify-content: center;
-            column-gap: 22px;
+            padding: 0;
             &_title{
                 padding-top: 51px;
             }
@@ -135,10 +182,12 @@ body{
             bottom: -10px;             
         }
     }
-    /* adjustmentof the position of the hearts on pages 2 to 5  */  
-    .heart_container{translate: 0 28px;}
+    /* adjustmentof the position of the hearts on pages 2 to 5  */ 
+    .heart_container{
+        right: 33%;
+        top: 65%;
+     } 
+    
 }
 
 
-
-    

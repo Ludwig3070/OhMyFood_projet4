@@ -12,11 +12,13 @@ $tertiary: #99e2d0;
 $Grey2: #eaeaea;
 $Background: #f6f6f6;
 //width
-$max_width: 640px;
+$max_width: 375px;
 $max_width_desk: 1440px;
 $card_width: 350px;
 $cards_up: 70px;
+$cards_left: 55px;
 $cards_up_desktop: 40px;
+$cards_txt_width_max:280px;
 $button_height:50px;
 
 //general used
@@ -200,3 +202,6 @@ input:checked +label{
   -webkit-filter:drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
   -moz-filter:drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
 }
+
+
+

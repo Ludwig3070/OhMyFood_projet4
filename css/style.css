@@ -22,7 +22,7 @@ body {
   margin: auto;
 }
 .main_container_add {
-  max-width: 640px;
+  max-width: 375px;
   background-color: white;
 }
 
@@ -50,7 +50,7 @@ footer {
   justify-content: center;
   width: 100%; /* very important value at 100% basic */
   margin: auto;
-  max-width: 640px;
+  max-width: 375px;
   background-color: #353535;
   color: #ffffff;
   align-items: flex-start;
@@ -172,7 +172,9 @@ input:checked + label {
 .image {
   /* filter: contrast(431%); */
   /* filter: contrast(431%) drop-shadow(10px 10px 5px #000000); */
-  filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));  
+  filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
+  -webkit-filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
+  -moz-filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
 }
 
 .header_href {
@@ -312,8 +314,7 @@ input:checked + label {
   border-radius: 15px;
   box-shadow: 2px 3px 11px -1px rgba(0, 0, 0, 0.1);
   position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
+  /* width: fit-content; */
 }
 .card_restaurant_content {
   display: flex;

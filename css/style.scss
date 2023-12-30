@@ -111,7 +111,7 @@
   border-radius: 15px;
   box-shadow: 2px 3px 11px -1px rgba(0,0,0,0.1);
   position: relative;
-  width: fit-content;
+  /* width: fit-content; */
   
   &_content{
     @include flex_display(row);
