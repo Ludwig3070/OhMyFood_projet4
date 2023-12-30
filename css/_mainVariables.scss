@@ -52,6 +52,7 @@ body {
   background: linear-gradient(193deg, $Primary -11.44%, $Secondary 123.93%);
   border: none;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.81, 1.68);
 }
 @mixin font($name: "Roboto",$font_size: 14px,$font_weight: 500,$color: $Green-font) {
   font-family: $name;
@@ -71,7 +72,7 @@ body {
 //header for all
 .header {
   width: 100%;
-  height: 100px;
+  height: 62px;
   display: flex;
   background-color: #fff;
   align-items: center;
@@ -114,6 +115,11 @@ footer {
   }
   
 }
+.heart_container{/*the container of heart can be mooved here for all pages lower than 1080px */
+  position: absolute;
+  top: 82%;
+  right: 4%;
+}
 /* ********************************************************************* */
 @media (min-width: 1080px) {
   /* adjustment from 1080px and +  */
@@ -122,7 +128,7 @@ footer {
     max-width: $max_width_desk;
   }
   .header {
-    height: 70px;
+    height: 100px;
   }
  
 
@@ -160,11 +166,14 @@ footer {
       }
     }
   }
+  .heart_container{/*the container of heart can be mooved here for all pages greater than 1080px */
+    top: 84%;
+    right: 4%;
+  }
 }
 /* ************************common decoration******************************************* */
 .appeal_button:hover,
 .button_command:hover {
-  transition: all 0.4s cubic-bezier(0.42, 0, 0.81, 1.68);
   opacity: 0.8;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.44);
 }
@@ -173,11 +182,21 @@ footer {
 #le_delice_des_sens_heart_container_check_click,
 #la_note_enchantee_heart_container_check_click {display: none;}
 /* common code for the 4 hearts of the index.html page */
-input:checked +label{opacity: 0;}
-.heart_container{
+input:checked +label{
+  opacity: 0;
+  transition:opacity 0.3s ease-in-out;
+}
+.heart_container{  
   &_toggle_content{position: relative;}
   &1_image {
-    cursor: crosshair; 
+    cursor:pointer; 
     position: absolute; 
-  }
+  }  
+}
+.image{
+  /* filter: contrast(431%); */
+  /* filter: contrast(431%) drop-shadow(10px 10px 5px #000000); */
+  filter:drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
+  -webkit-filter:drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
+  -moz-filter:drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
 }
