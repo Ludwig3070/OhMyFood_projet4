@@ -18,8 +18,8 @@ $card_width: 350px;
 $cards_up: 70px;
 $cards_left: 55px;
 $cards_up_desktop: 40px;
-$cards_txt_width_max:280px;
-$button_height:50px;
+$cards_txt_width_max: 280px;
+$button_height: 50px;
 
 //general used
 * {
@@ -44,7 +44,7 @@ body {
   margin: $margin;
 }
 //button module
-@mixin button($width: 218px, $button_height:$button_height, $margin: 27px) {
+@mixin button($width: 218px, $button_height: $button_height, $margin: 27px) {
   @include font("Roboto", 16px, 500, white);
   @include flex_display;
   width: $width;
@@ -56,7 +56,12 @@ body {
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   transition: all 0.4s cubic-bezier(0.42, 0, 0.81, 1.68);
 }
-@mixin font($name: "Roboto",$font_size: 14px,$font_weight: 500,$color: $Green-font) {
+@mixin font(
+  $name: "Roboto",
+  $font_size: 14px,
+  $font_weight: 500,
+  $color: $Green-font
+) {
   font-family: $name;
   font-size: $font_size;
   font-weight: $font_weight;
@@ -115,9 +120,9 @@ footer {
   &_title {
     @include font("Shrikhand", 18px, 400, white);
   }
-  
 }
-.heart_container{/*the container of heart can be mooved here for all pages lower than 1080px */
+.heart_container {
+  /*the container of heart can be mooved here for all pages lower than 1080px */
   position: absolute;
   top: 82%;
   right: 4%;
@@ -132,7 +137,6 @@ footer {
   .header {
     height: 100px;
   }
- 
 
   footer {
     flex-direction: row-reverse;
@@ -168,7 +172,8 @@ footer {
       }
     }
   }
-  .heart_container{/*the container of heart can be mooved here for all pages greater than 1080px */
+  .heart_container {
+    /*the container of heart can be mooved here for all pages greater than 1080px */
     top: 84%;
     right: 4%;
   }
@@ -179,29 +184,29 @@ footer {
   opacity: 0.8;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.44);
 }
+#heart_click,/* a verifier si encor util */
 #la_palette_du_gout_heart_container_check_click,
 #a_la_francaise_heart_container_check_click,
 #le_delice_des_sens_heart_container_check_click,
-#la_note_enchantee_heart_container_check_click {display: none;}
+#la_note_enchantee_heart_container_check_click {
+  display: none;
+}
 /* common code for the 4 hearts of the index.html page */
-input:checked +label{
+#heart_click:checked + .heart_container_toggle_content,/* a verifier si encor util */
+#la_palette_du_gout_heart_container_check_click:checked + .heart_container_toggle_content,
+#a_la_francaise_heart_container_check_click:checked + .heart_container_toggle_content,
+#le_delice_des_sens_heart_container_check_click:checked + .heart_container_toggle_content,
+#la_note_enchantee_heart_container_check_click:checked + .heart_container_toggle_content {
   opacity: 0;
-  transition:opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
-.heart_container{  
-  &_toggle_content{position: relative;}
+
+.heart_container {
+  &_toggle_content {
+    position: relative;
+  }
   &1_image {
-    cursor:pointer; 
-    position: absolute; 
-  }  
+    cursor: pointer;
+    position: absolute;
+  }
 }
-.image{
-  /* filter: contrast(431%); */
-  /* filter: contrast(431%) drop-shadow(10px 10px 5px #000000); */
-  filter:drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
-  -webkit-filter:drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
-  -moz-filter:drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
-}
-
-
-

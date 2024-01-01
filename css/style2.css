@@ -12,7 +12,7 @@ body {
   background-color: black; /* a enlever */
 }
 
-.main_container, .card, .cards, .banner {
+.main_container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +87,8 @@ footer {
   color: white;
 }
 
-.heart_container { /*the container of heart can be mooved here for all pages lower than 1080px */
+.heart_container {
+  /*the container of heart can be mooved here for all pages lower than 1080px */
   position: absolute;
   top: 82%;
   right: 4%;
@@ -96,7 +97,7 @@ footer {
 /* ********************************************************************* */
 @media (min-width: 1080px) {
   /* adjustment from 1080px and +  */
-  .main_container, .card, .cards, .banner,
+  .main_container,
   footer {
     max-width: 1440px;
   }
@@ -135,7 +136,8 @@ footer {
   .footer_a_p_max {
     width: 168px;
   }
-  .heart_container { /*the container of heart can be mooved here for all pages greater than 1080px */
+  .heart_container {
+    /*the container of heart can be mooved here for all pages greater than 1080px */
     top: 84%;
     right: 4%;
   }
@@ -147,6 +149,7 @@ footer {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.44);
 }
 
+#heart_click,
 #la_palette_du_gout_heart_container_check_click,
 #a_la_francaise_heart_container_check_click,
 #le_delice_des_sens_heart_container_check_click,
@@ -155,7 +158,11 @@ footer {
 }
 
 /* common code for the 4 hearts of the index.html page */
-input:checked + label {
+#heart_click:checked + .heart_container_toggle_content,
+#la_palette_du_gout_heart_container_check_click:checked + .heart_container_toggle_content,
+#a_la_francaise_heart_container_check_click:checked + .heart_container_toggle_content,
+#le_delice_des_sens_heart_container_check_click:checked + .heart_container_toggle_content,
+#la_note_enchantee_heart_container_check_click:checked + .heart_container_toggle_content {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -168,15 +175,15 @@ input:checked + label {
   position: absolute;
 }
 
-.image {
-  /* filter: contrast(431%); */
-  /* filter: contrast(431%) drop-shadow(10px 10px 5px #000000); */
-  filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
-  -webkit-filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
-  -moz-filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
-}
-
 /* import common datas */
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* very important value at 100% basic */
+  margin: auto;
+}
 .banner_img {
   width: 100%;
   -o-object-fit: cover;
@@ -186,9 +193,21 @@ input:checked + label {
 
 .cards {
   background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* very important value at 100% basic */
+  margin: auto;
   transform: translateY(-70px); /* image lift */
   border-radius: 40px 40px 0 0;
-  padding: 0 15px;
+  /* padding: 0 15px; */
+  margin-bottom: 70px; /* enleve le trou */
+  /*&_bottom {
+    /* center command button */
+  /*margin-bottom: calc($cards_up_desktop + $button_height + 40px);
+  /*40px is the requested margin  */
+  /* }*/
 }
 .cards_content {
   display: flex;
@@ -198,7 +217,7 @@ input:checked + label {
   width: 100%; /* very important value at 100% basic */
   margin: auto;
   justify-content: flex-start;
-  padding-left: 10px;
+  padding-left: 20px;
   padding-top: 32px;
   position: relative;
 }
@@ -226,7 +245,13 @@ input:checked + label {
   padding-bottom: 9px;
 }
 
-.card {
+.card { /* a enlever si tout va */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* very important value at 100% basic */
+  margin: auto;
   flex-direction: row;
   justify-content: space-between;
   background-color: white;
@@ -236,26 +261,96 @@ input:checked + label {
   box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.1);
   margin-top: 12px;
   padding: 15px;
-  /*    &:hover{
-         padding-right: $cards_left;
-         transition: padding 0.4s ease-in-out;        
-     }
-     &:hover::after{
-         content: "";
-         width: 50px;
-         height: 100%;
-         padding: 0;
-         background-color: $Green;
-     }
-          */
+}
+.card_container {
+  /* rajout pour carte2 */
+  position: relative;
+  height: 70px;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 15px;
+}
+.card_swing { /* vient de card2 */
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  z-index: 1; /* passe au dessus de l'image */
+  transition: transform 0.3s ease-in-out;
+}
+.card_toggle { /* vient de card2 */
+  /* rajout pour carte2 */
+  display: none;
+}
+.card_toggle_label {
+  /* pivot qui cache l'image */
+  width: 352px;
+  height: 70px;
+  position: absolute;
+  cursor: crosshair;
+  right: 0;
+  z-index: 100; /* pour passer au dessus de tout */
+}
+.card_toggle:checked ~ .card_content { /* card2 devient card */
+  /* valeur a reajuster avec des valeurs automatiques */
+  width: 275px;
+  /* reduit la taille occupee par les textes pour les ...*/
+}
+.card_toggle:checked ~ .card_swing { /* card2 devient card */
+  transform: translatex(-70px);
+}
+.card_content { /* vient de card2 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 3; /* *********************************************** */
+  padding: 15px;
+  width: 345px; /* a modifier */
+  height: 70px;
+  transition: width 0.3s ease;
+  position: absolute;
+  overflow: hidden; /*super important permet de virer le radius du pivot et avoir une translation bien nette*/
+  transition: width 0.3s ease-in-out; /* suit exactement le pivot*/
+}
+.card_content_title {
+  font-family: "Shrikhand";
+  font-size: 28px;
+  font-weight: 400;
+  color: #101010;
+  /* a enlever */
+  background-color: #f6f6f6;
+}
+.card_image { /* vient de card2 */
+  position: absolute;
+  display: block;
+  height: 70px;
+  width: auto;
+  z-index: 0;
+  top: 0;
+  right: -2px;
+}
+.card_prix {
+  align-self: flex-end;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 700;
+  color: #353535;
 }
 .card_txt {
+  display: block; /* rajout */
   width: 280px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  /* border: solid 1px gray; */
 }
 .card_txt_title {
+  display: block; /*rajout*/
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
@@ -266,6 +361,7 @@ input:checked + label {
   overflow: hidden;
 }
 .card_txt_subtitle {
+  display: block; /*rajout*/
   font-family: "Roboto";
   font-size: 15px;
   font-weight: 300;
@@ -275,30 +371,12 @@ input:checked + label {
   white-space: nowrap;
   overflow: hidden;
 }
-.card_prix {
-  font-family: "Roboto";
-  font-size: 15px;
-  font-weight: 700;
-  color: #353535;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: auto; /* very important value at 100% basic */
-  margin: auto;
-  align-items: flex-end;
-  height: 40px;
-  margin: 0;
-}
-.card_bottom { /* center command button */
-  margin-bottom: 65px;
-}
 
 body {
   background-color: #101010;
 }
 
-.main_container, .banner, .cards, .card {
+.main_container {
   background-color: #f6f6f6; /*allows you to visually erase the margin between the footer and .main due to the rise on pages 2 to 5 */
   position: relative;
   max-width: 375px; /* allows only $max_width width */
@@ -324,70 +402,83 @@ body {
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   transition: all 0.4s cubic-bezier(0.42, 0, 0.81, 1.68);
   position: absolute;
-  bottom: 40px;
+  bottom: -90px;
 }
 
 /* animation display of the dishes on pages 2 to 4 */
 .heart_container {
   top: 60%;
-  right: 5%;
+  right: 10%;
 }
 
 .hidden_0 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_1 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_2 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_3 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_4 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_5 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_6 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_7 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_8 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_9 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_10 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_11 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 .hidden_12 {
-  opacity: 0;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
 }
 
 @keyframes visibility_on {
   100% {
-    opacity: 1;
+    visibility: visible;
   }
 }
 .hidden_0 {
@@ -442,12 +533,30 @@ body {
   animation: visibility_on 0.3s ease-out 0.6s forwards;
 }
 
+/* rajout pour carte1 et 2*****************************************************/
+.hidden_1,
+.hidden_2,
+.hidden_3,
+.hidden_5,
+.hidden_6,
+.hidden_7,
+.hidden_9,
+.hidden_10,
+.hidden_11,
+.hidden_12 {
+  padding: 0;
+  position: relative;
+  justify-content: flex-end;
+}
+
 /* ********************************************************************* */
-@media (min-width: 1080px) { /* adjustment from 1080px and + */
-  .main_container, .banner, .cards, .card, footer {
+@media (min-width: 1080px) {
+  /* adjustment from 1080px and + */
+  .main_container,
+  footer {
     max-width: 1440px;
   }
-  .main_container, .banner, .cards, .card {
+  .main_container {
     background-color: #fff;
   }
   .banner_img {
@@ -473,17 +582,6 @@ body {
   }
   .cards_content_logo {
     padding-top: 51px;
-  }
-  .card {
-    width: 635px;
-  }
-  .card_prix {
-    align-self: flex-end;
-  }
-  .card_bottom {
-    /* center command button */
-    margin-bottom: 130px;
-    /*40px is the requested margin  */
   }
   .menu_subtitle {
     display: flex;

@@ -1,193 +1,264 @@
-@import "_mainVariables.scss";/* import common datas */
+@import "_mainVariables.scss"; /* import common datas */
 
+.banner {
+  @include flex_display(column);
+  &_img {
+    width: 100%;
+    object-fit: cover;
+    height: 275px; /*give the correct height because the image is too big */
+  }
+}
+.cards {
+  background-color: $Background;
+  @include flex_display(column);
+  transform: translateY(-$cards_up); /* image lift */
+  border-radius: 40px 40px 0 0;
+  /* padding: 0 15px; */
+  margin-bottom: $cards_up;/* enleve le trou */
+  /*&_bottom {
+    /* center command button */
+    /*margin-bottom: calc($cards_up_desktop + $button_height + 40px);
+    /*40px is the requested margin  */
+ /* }*/
 
-
-.banner{
-    @extend .main_container;
-    &_img{
-        width:100%;
-        object-fit: cover;
-        height: 275px; /*give the correct height because the image is too big */       
-    }
-}
-.cards{
-    background-color: $Background;
-    @extend .main_container;
-    transform: translateY(-$cards_up);/* image lift */
-    border-radius: 40px 40px 0 0;
-    padding: 0 15px;
-    
-    &_content{
-        @include flex_display;
-        justify-content: flex-start;
-        padding-left: 10px;      
-        padding-top:32px;
-        position: relative;        
-        &_title{
-            @include font("Shrikhand",28px,400,$Black);           
-        }
-    }
-                
-    }
-    .menu_subtitle{
-       width:$card_width;
-       @include font("Roboto",16px,300,black);
-       text-transform: uppercase;
-       margin-top: 40px;  
-       &::after{
-        content: "";
-        display: block;
-        width: 40px;
-        border-bottom: 3px solid $Green;
-        padding-bottom: 9px;       
-        }
-       }
-.card{
-    @extend .main_container;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: white;
-    max-width: $card_width; /* allows us to reduce a little  */
-    height: 70px;
-    border-radius: 15px;
-    box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.10);
-    margin-top: 12px;
-    padding: 15px;
-    &_txt{
-        width:$cards_txt_width_max;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        &_title{
-            @include font("Roboto",18px,500,black);
-            max-width: $cards_txt_width_max;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        &_subtitle{
-            @include font("Roboto",15px,300,black);
-            max-width:$cards_txt_width_max;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-    }
-    &_prix{
-        @include font("Roboto",15px,700,$Grey);
-        @include flex_display(row,auto);
-        align-items: flex-end;
-        height: 40px;
-        margin: 0;
-    }
-    &_bottom{/* center command button */
-        margin-bottom: 65px;
-    }
- /*    &:hover{
-        padding-right: $cards_left;
-        transition: padding 0.4s ease-in-out;        
-    }
-    &:hover::after{
-        content: "";
-        width: 50px;
-        height: 100%;
-        padding: 0;
-        background-color: $Green;
-    }
-         */
-   
- 
-}
-body{
-    background-color: $Black;
-}
-.main_container{
-    background-color: $Background; /*allows you to visually erase the margin between the footer and .main due to the rise on pages 2 to 5 */ 
+  &_content {
+    @include flex_display;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 32px;
     position: relative;
-    max-width: $max_width;/* allows only $max_width width */
-}
-
-.button_command{
-    @include button(186px,50px,0);
-    position: absolute;
-    bottom: 40px;
-}
- /* animation display of the dishes on pages 2 to 4 */  
- .heart_container{
-    top: 60%;    
-    right: 5%;
- }
- @for $i from 0 through 12{
-    .hidden_#{$i}{opacity: 0;}
-  }
-  @keyframes visibility_on {
-    100%{opacity:1}
-  } 
-  
-  @for $i from 0 through 12{
-   
-    .hidden_#{$i}{
-      animation: visibility_on 0.3s ease-out (#{$i/2*0.1}s) forwards;
+    &_title {
+      @include font("Shrikhand", 28px, 400, $Black);
     }
   }
+}
+.menu_subtitle {
+  width: $card_width;
+  @include font("Roboto", 16px, 300, black);
+  text-transform: uppercase;
+  margin-top: 40px;
+  &::after {
+    content: "";
+    display: block;
+    width: 40px;
+    border-bottom: 3px solid $Green;
+    padding-bottom: 9px;
+  }
+}
+.card {/* a enlever si tout va */
+  @include flex_display(column);
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  max-width: $card_width; /* allows us to reduce a little  */
+  height: 70px;
+  border-radius: 15px;
+  box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 12px;
+  padding: 15px;
+  &_container {
+    /* rajout pour carte2 */
+    position: relative;
+    height: 70px;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 15px;
+  }
+  &_swing {/* vient de card2 */
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    z-index: 1; /* passe au dessus de l'image */
+    transition: transform 0.3s ease-in-out;
+  }
+  &_toggle {/* vient de card2 */
+    /* rajout pour carte2 */
+    display: none;
+    &_label {
+      /* pivot qui cache l'image */
+      width: 352px;
+      height: 70px;
+      position: absolute;
+      cursor: crosshair;
+      right: 0;
+      z-index: 100; /* pour passer au dessus de tout */
+    }
+    &:checked ~ .card_content {/* card2 devient card */
+      /* valeur a reajuster avec des valeurs automatiques */
+      width: 275px;
+      /* reduit la taille occupee par les textes pour les ...*/
+    }
+    &:checked ~ .card_swing {/* card2 devient card */
+      transform: translatex(-70px);
+    }
+  }
+  &_content {/* vient de card2 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3; /* *********************************************** */
+    padding: 15px;
+    width: 345px; /* a modifier */
+    height: 70px;
+    transition: width 0.3s ease;
+    position: absolute;
+    overflow: hidden; /*super important permet de virer le radius du pivot et avoir une translation bien nette*/
+    transition: width 0.3s ease-in-out; /* suit exactement le pivot*/
+    &_title {
+      @include font("Shrikhand", 28px, 400, $Black); /* a enlever */
+      background-color: $Background;
+    }
+  }
+  &_image {/* vient de card2 */
+    position: absolute;
+    display: block;
+    height: 70px;
+    width: auto;
+    z-index: 0;
+    top: 0;
+    right: -2px;
+  }
+  &_prix {
+    align-self: flex-end;
+    @include font("Roboto", 15px, 700, $Grey);
+  }
+  &_txt {
+    display: block; /* rajout */
+    width: $cards_txt_width_max;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+    /* border: solid 1px gray; */
+    &_title {
+      display: block; /*rajout*/
+      @include font("Roboto", 18px, 500, black);
+      max-width: $cards_txt_width_max;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    &_subtitle {
+      display: block; /*rajout*/
+      @include font("Roboto", 15px, 300, black);
+      max-width: $cards_txt_width_max;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    
+    
+  }
   
 
-    
+  
+}
+body {
+  background-color: $Black;
+}
+.main_container {
+  background-color: $Background; /*allows you to visually erase the margin between the footer and .main due to the rise on pages 2 to 5 */
+  position: relative;
+  max-width: $max_width; /* allows only $max_width width */
+}
+
+.button_command {
+  @include button(186px, 50px, 0);
+  position: absolute;
+  bottom: -90px;
+}
+/* animation display of the dishes on pages 2 to 4 */
+.heart_container {
+  top: 60%;
+  right: 10%;
+}
+@for $i from 0 through 12 {
+  .hidden_#{$i} {
+    /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+    visibility: hidden;
+  }
+}
+@keyframes visibility_on {
+  100% {
+    visibility: visible;
+  }
+}
+
+@for $i from 0 through 12 {
+  .hidden_#{$i} {
+    animation: visibility_on 0.3s ease-out (#{$i/2 * 0.1}s) forwards;
+  }
+}
+/* rajout pour carte1 et 2*****************************************************/
+.hidden_1,
+.hidden_2,
+.hidden_3, 
+.hidden_5, 
+.hidden_6, 
+.hidden_7, 
+.hidden_9, 
+.hidden_10, 
+.hidden_11, 
+.hidden_12 {
+  padding: 0;
+  position: relative;
+  justify-content: flex-end;
+}
+
+
 
 /* ********************************************************************* */
-@media (min-width:1080px){/* adjustment from 1080px and + */
-    .main_container,footer {max-width: $max_width_desk;}
-    .main_container{background-color: #fff;}
-    .banner_img{
-        height: 381px;
-        width: 100%; 
-        object-fit:cover;
-        object-position: 0 58% ;              
+@media (min-width: 1080px) {
+  /* adjustment from 1080px and + */
+  .main_container,
+  footer {
+    max-width: $max_width_desk;
+  }
+  .main_container {
+    background-color: #fff;
+  }
+  .banner_img {
+    height: 381px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 58%;
+  }
+  .cards {
+    transform: translateY(-$cards_up_desktop); /*image lift  */
+    width: 1055px;
+    margin-bottom: -$cards_up_desktop; /* fills the hole at the bottom left by the translate */
+    background-color: $Background;
+    &_content {
+      justify-content: center;
+      padding: 0;
+      &_title {
+        padding-top: 51px;
+      }
+      &_logo {
+        padding-top: 51px;
+      }
     }
-    .cards{
-        transform: translateY(-$cards_up_desktop);/*image lift  */
-        width: 1055px;
-        margin-bottom: -$cards_up_desktop;/* fills the hole at the bottom left by the translate */
-        background-color: $Background;
-        &_content{
-            justify-content: center;
-            padding: 0;
-            &_title{
-                padding-top: 51px;
-            }
-            &_logo{
-                padding-top: 51px;
-            }
-        }
+  }
+ 
+  .menu_subtitle {
+    display: flex;
+    position: relative;
+    width: 635px;
+    margin-bottom: 12px;
+    &::after {
+      position: absolute;
+      border-bottom: 3px solid $Green;
+      bottom: -10px;
     }
-    .card {
-        width: 635px;
-        &_prix{
-            align-self: flex-end;
-        }
-        &_bottom{
-            /* center command button */
-            margin-bottom: calc($cards_up_desktop + $button_height + 40px);
-            /*40px is the requested margin  */
-        }
-    }
-    .menu_subtitle{
-        display: flex;
-        position: relative;
-        width: 635px;
-        margin-bottom: 12px;
-        &::after{
-            position: absolute;
-            border-bottom: 3px solid $Green;
-            bottom: -10px;             
-        }
-    }
-    /* adjustmentof the position of the hearts on pages 2 to 5  */ 
-    .heart_container{
-        right: 33%;
-        top: 65%;
-     } 
-    
+  }
+  /* adjustmentof the position of the hearts on pages 2 to 5  */
+  .heart_container {
+    right: 33%;
+    top: 65%;
+  }
 }
-
-

@@ -88,7 +88,8 @@ footer {
   color: white;
 }
 
-.heart_container { /*the container of heart can be mooved here for all pages lower than 1080px */
+.heart_container {
+  /*the container of heart can be mooved here for all pages lower than 1080px */
   position: absolute;
   top: 82%;
   right: 4%;
@@ -136,7 +137,8 @@ footer {
   .footer_a_p_max {
     width: 168px;
   }
-  .heart_container { /*the container of heart can be mooved here for all pages greater than 1080px */
+  .heart_container {
+    /*the container of heart can be mooved here for all pages greater than 1080px */
     top: 84%;
     right: 4%;
   }
@@ -148,6 +150,7 @@ footer {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.44);
 }
 
+#heart_click,
 #la_palette_du_gout_heart_container_check_click,
 #a_la_francaise_heart_container_check_click,
 #le_delice_des_sens_heart_container_check_click,
@@ -156,7 +159,11 @@ footer {
 }
 
 /* common code for the 4 hearts of the index.html page */
-input:checked + label {
+#heart_click:checked + .heart_container_toggle_content,
+#la_palette_du_gout_heart_container_check_click:checked + .heart_container_toggle_content,
+#a_la_francaise_heart_container_check_click:checked + .heart_container_toggle_content,
+#le_delice_des_sens_heart_container_check_click:checked + .heart_container_toggle_content,
+#la_note_enchantee_heart_container_check_click:checked + .heart_container_toggle_content {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -169,16 +176,8 @@ input:checked + label {
   position: absolute;
 }
 
-.image {
-  /* filter: contrast(431%); */
-  /* filter: contrast(431%) drop-shadow(10px 10px 5px #000000); */
-  filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
-  -webkit-filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
-  -moz-filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
-}
-
 .header_href {
-  visibility: hidden; /* cache la fleche */
+  visibility: hidden; /* cache la fleche du header */
 }
 
 .search_bar {
