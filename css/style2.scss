@@ -190,7 +190,7 @@ body {
 
 @for $i from 0 through 12 {
   .hidden_#{$i} {
-    animation: visibility_on 0.3s ease-out (#{$i/2 * 0.1}s) forwards;
+    animation: visibility_on 0.3s ease-out calc($i/2 * 0.1s) forwards;
   }
 }
 
@@ -240,7 +240,6 @@ body {
       }
     }
   }
-
   .menu_subtitle {
     display: flex;
     position: relative;

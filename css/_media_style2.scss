@@ -1,0 +1,70 @@
+/* ************************** adjustment from 1080px and + ************************************************** */
+@media (min-width: 1080px) {    
+    .main_container,
+    footer {
+      max-width: $max_width_desk;      
+    }
+
+    .main_container {
+      background-color: #fff;
+    }
+
+    .banner_img {
+      height: 381px;
+      width: 100%;
+      object-fit: cover;
+      object-position: 0 58%;
+    }
+
+    .cards {
+      transform: translateY(-$cards_up_desktop); /*menu lift on banner */
+      width: 1055px;
+      margin-bottom: -$cards_up_desktop; /* fills the hole at the bottom left by the translate */
+      background-color: $Background;
+      &_content {
+        justify-content: center;
+        padding: 0;
+        &_title {
+          padding-top: 51px;
+        }
+        &_logo {
+          padding-top: 51px;
+        }
+      }
+    }
+
+    .card {
+      max-width: $card_desk_width;
+      &_txt {
+        width: $card_txt_width_desk_max;
+      }
+      &_toggle {
+        &:checked ~ .card_content {/* reduces the size occupied by the texts for ...*/
+          width: $card_txt_width_desk_max;          
+        }
+      }
+    }
+  
+    .menu_subtitle {
+      display: flex;
+      position: relative;
+      width: 635px;
+      margin-bottom: 12px;
+      &::after {
+        position: absolute;
+        border-bottom: 3px solid $Green;
+        bottom: -10px;
+      }
+    }
+    /* adjust the position of the hearts on pages 2 to 5  */
+    .heart_container {
+      right: 33%;
+      top: 65%;
+    }
+    /* margin between button and footer */
+    .button_command {      
+      margin-bottom: 40px;
+    }
+  }
+  
+  
