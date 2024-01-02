@@ -201,13 +201,6 @@ footer {
   margin: auto;
   transform: translateY(-70px); /* image lift */
   border-radius: 40px 40px 0 0;
-  /* padding: 0 15px; */
-  margin-bottom: 70px; /* enleve le trou */
-  /*&_bottom {
-    /* center command button */
-  /*margin-bottom: calc($cards_up_desktop + $button_height + 40px);
-  /*40px is the requested margin  */
-  /* }*/
 }
 .cards_content {
   display: flex;
@@ -245,7 +238,7 @@ footer {
   padding-bottom: 9px;
 }
 
-.card { /* a enlever si tout va */
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -262,6 +255,15 @@ footer {
   margin-top: 12px;
   padding: 15px;
 }
+.card_style {
+  padding: 0;
+  position: relative;
+  justify-content: flex-end;
+}
+.card_bottom {
+  /* margin between last card and button */
+  margin-bottom: 40px;
+}
 .card_container {
   /* rajout pour carte2 */
   position: relative;
@@ -271,7 +273,8 @@ footer {
   background: #fff;
   border-radius: 15px;
 }
-.card_swing { /* vient de card2 */
+.card_swing {
+  /* vient de card2 */
   width: 70px;
   height: 70px;
   background-color: #fff;
@@ -280,35 +283,35 @@ footer {
   z-index: 1; /* passe au dessus de l'image */
   transition: transform 0.3s ease-in-out;
 }
-.card_toggle { /* vient de card2 */
-  /* rajout pour carte2 */
+.card_toggle {
   display: none;
 }
 .card_toggle_label {
   /* pivot qui cache l'image */
-  width: 352px;
+  width: 100%;
   height: 70px;
   position: absolute;
   cursor: crosshair;
   right: 0;
   z-index: 100; /* pour passer au dessus de tout */
 }
-.card_toggle:checked ~ .card_content { /* card2 devient card */
-  /* valeur a reajuster avec des valeurs automatiques */
-  width: 275px;
+.card_toggle:checked ~ .card_content {
+  width: 280px;
   /* reduit la taille occupee par les textes pour les ...*/
 }
-.card_toggle:checked ~ .card_swing { /* card2 devient card */
+.card_toggle:checked ~ .card_swing {
+  /* card2 devient card */
   transform: translatex(-70px);
 }
-.card_content { /* vient de card2 */
+.card_content {
+  /* vient de card2 */
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   z-index: 3; /* *********************************************** */
   padding: 15px;
-  width: 345px; /* a modifier */
+  width: 100%;
   height: 70px;
   transition: width 0.3s ease;
   position: absolute;
@@ -323,7 +326,8 @@ footer {
   /* a enlever */
   background-color: #f6f6f6;
 }
-.card_image { /* vient de card2 */
+.card_image {
+  /* vient de card2 */
   position: absolute;
   display: block;
   height: 70px;
@@ -355,7 +359,7 @@ footer {
   font-size: 18px;
   font-weight: 500;
   color: black;
-  max-width: 280px;
+  max-width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -366,7 +370,7 @@ footer {
   font-size: 15px;
   font-weight: 300;
   color: black;
-  max-width: 280px;
+  max-width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -401,8 +405,7 @@ body {
   border: none;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   transition: all 0.4s cubic-bezier(0.42, 0, 0.81, 1.68);
-  position: absolute;
-  bottom: -90px;
+  margin-bottom: -30px; /* move button into the gap */
 }
 
 /* animation display of the dishes on pages 2 to 4 */
@@ -533,22 +536,6 @@ body {
   animation: visibility_on 0.3s ease-out 0.6s forwards;
 }
 
-/* rajout pour carte1 et 2*****************************************************/
-.hidden_1,
-.hidden_2,
-.hidden_3,
-.hidden_5,
-.hidden_6,
-.hidden_7,
-.hidden_9,
-.hidden_10,
-.hidden_11,
-.hidden_12 {
-  padding: 0;
-  position: relative;
-  justify-content: flex-end;
-}
-
 /* ********************************************************************* */
 @media (min-width: 1080px) {
   /* adjustment from 1080px and + */
@@ -583,6 +570,16 @@ body {
   .cards_content_logo {
     padding-top: 51px;
   }
+  .card {
+    max-width: 634px;
+  }
+  .card_txt {
+    width: 564px;
+  }
+  .card_toggle:checked ~ .card_content {
+    width: 564px;
+    /* reduit la taille occupee par les textes pour les ...*/
+  }
   .menu_subtitle {
     display: flex;
     position: relative;
@@ -598,5 +595,9 @@ body {
   .heart_container {
     right: 33%;
     top: 65%;
+  }
+  .button_command {
+    /* margin between button and footer */
+    margin-bottom: 40px;
   }
 }/*# sourceMappingURL=style2.css.map */

@@ -15,10 +15,13 @@ $Background: #f6f6f6;
 $max_width: 375px;
 $max_width_desk: 1440px;
 $card_width: 350px;
+$card_txt_width_max: calc($card_width - 70px);
+$card_desk_width:634px;
+$card_txt_width_desk_max: calc($card_desk_width - 70px);
 $cards_up: 70px;
 $cards_left: 55px;
 $cards_up_desktop: 40px;
-$cards_txt_width_max: 280px;
+
 $button_height: 50px;
 
 //general used

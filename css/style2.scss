@@ -9,18 +9,10 @@
   }
 }
 .cards {
-  background-color: $Background;
+  background-color: $Background;  
   @include flex_display(column);
   transform: translateY(-$cards_up); /* image lift */
   border-radius: 40px 40px 0 0;
-  /* padding: 0 15px; */
-  margin-bottom: $cards_up;/* enleve le trou */
-  /*&_bottom {
-    /* center command button */
-    /*margin-bottom: calc($cards_up_desktop + $button_height + 40px);
-    /*40px is the requested margin  */
- /* }*/
-
   &_content {
     @include flex_display;
     justify-content: flex-start;
@@ -45,7 +37,7 @@
     padding-bottom: 9px;
   }
 }
-.card {/* a enlever si tout va */
+.card {
   @include flex_display(column);
   flex-direction: row;
   justify-content: space-between;
@@ -56,6 +48,15 @@
   box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.1);
   margin-top: 12px;
   padding: 15px;
+  &_style{
+  padding: 0;
+  position: relative;
+  justify-content: flex-end;
+  }
+  &_bottom {
+    /* margin between last card and button */
+    margin-bottom: 40px;
+  }
   &_container {
     /* rajout pour carte2 */
     position: relative;
@@ -65,7 +66,8 @@
     background: #fff;
     border-radius: 15px;
   }
-  &_swing {/* vient de card2 */
+  &_swing {
+    /* vient de card2 */
     width: 70px;
     height: 70px;
     background-color: #fff;
@@ -74,35 +76,35 @@
     z-index: 1; /* passe au dessus de l'image */
     transition: transform 0.3s ease-in-out;
   }
-  &_toggle {/* vient de card2 */
-    /* rajout pour carte2 */
+  &_toggle {
     display: none;
     &_label {
       /* pivot qui cache l'image */
-      width: 352px;
+      width: 100%;
       height: 70px;
       position: absolute;
       cursor: crosshair;
       right: 0;
       z-index: 100; /* pour passer au dessus de tout */
     }
-    &:checked ~ .card_content {/* card2 devient card */
-      /* valeur a reajuster avec des valeurs automatiques */
-      width: 275px;
+    &:checked ~ .card_content {
+      width: $card_txt_width_max;
       /* reduit la taille occupee par les textes pour les ...*/
     }
-    &:checked ~ .card_swing {/* card2 devient card */
+    &:checked ~ .card_swing {
+      /* card2 devient card */
       transform: translatex(-70px);
     }
   }
-  &_content {/* vient de card2 */
+  &_content {
+    /* vient de card2 */
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     z-index: 3; /* *********************************************** */
     padding: 15px;
-    width: 345px; /* a modifier */
+    width: 100%;
     height: 70px;
     transition: width 0.3s ease;
     position: absolute;
@@ -113,7 +115,8 @@
       background-color: $Background;
     }
   }
-  &_image {/* vient de card2 */
+  &_image {
+    /* vient de card2 */
     position: absolute;
     display: block;
     height: 70px;
@@ -128,7 +131,7 @@
   }
   &_txt {
     display: block; /* rajout */
-    width: $cards_txt_width_max;
+    width: $card_txt_width_max;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -138,7 +141,7 @@
     &_title {
       display: block; /*rajout*/
       @include font("Roboto", 18px, 500, black);
-      max-width: $cards_txt_width_max;
+      max-width: 100%;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
@@ -146,17 +149,12 @@
     &_subtitle {
       display: block; /*rajout*/
       @include font("Roboto", 15px, 300, black);
-      max-width: $cards_txt_width_max;
+      max-width: 100%;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
     }
-    
-    
   }
-  
-
-  
 }
 body {
   background-color: $Black;
@@ -165,13 +163,14 @@ body {
   background-color: $Background; /*allows you to visually erase the margin between the footer and .main due to the rise on pages 2 to 5 */
   position: relative;
   max-width: $max_width; /* allows only $max_width width */
+  
 }
 
 .button_command {
   @include button(186px, 50px, 0);
-  position: absolute;
-  bottom: -90px;
+  margin-bottom: -30px; /* move button into the gap */
 }
+
 /* animation display of the dishes on pages 2 to 4 */
 .heart_container {
   top: 60%;
@@ -194,22 +193,6 @@ body {
     animation: visibility_on 0.3s ease-out (#{$i/2 * 0.1}s) forwards;
   }
 }
-/* rajout pour carte1 et 2*****************************************************/
-.hidden_1,
-.hidden_2,
-.hidden_3, 
-.hidden_5, 
-.hidden_6, 
-.hidden_7, 
-.hidden_9, 
-.hidden_10, 
-.hidden_11, 
-.hidden_12 {
-  padding: 0;
-  position: relative;
-  justify-content: flex-end;
-}
-
 
 
 /* ********************************************************************* */
@@ -218,6 +201,7 @@ body {
   .main_container,
   footer {
     max-width: $max_width_desk;
+    
   }
   .main_container {
     background-color: #fff;
@@ -244,7 +228,19 @@ body {
       }
     }
   }
- 
+  .card {
+    max-width: $card_desk_width;
+    &_txt {
+      width: $card_txt_width_desk_max;
+    }
+    &_toggle {
+      &:checked ~ .card_content {
+        width: $card_txt_width_desk_max;
+        /* reduit la taille occupee par les textes pour les ...*/
+      }
+    }
+  }
+
   .menu_subtitle {
     display: flex;
     position: relative;
@@ -261,4 +257,10 @@ body {
     right: 33%;
     top: 65%;
   }
+  .button_command {
+    /* margin between button and footer */
+    margin-bottom: 40px; 
+    
+  }
 }
+
