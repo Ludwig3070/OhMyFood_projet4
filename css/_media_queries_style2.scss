@@ -1,23 +1,23 @@
-/* ************************** adjustment from 1080px and + ************************************************** */
-@media (min-width: 1080px) {    
+
+/* ********************************************************************* */
+@media (min-width: 1080px) {
+    /* adjustment from 1080px and + */
     .main_container,
     footer {
-      max-width: $max_width_desk;      
+      max-width: $max_width_desk;
+      
     }
-
     .main_container {
       background-color: #fff;
     }
-
     .banner_img {
       height: 381px;
       width: 100%;
       object-fit: cover;
       object-position: 0 58%;
     }
-
     .cards {
-      transform: translateY(-$cards_up_desktop); /*menu lift on banner */
+      transform: translateY(-$cards_up_desktop); /*image lift  */
       width: 1055px;
       margin-bottom: -$cards_up_desktop; /* fills the hole at the bottom left by the translate */
       background-color: $Background;
@@ -32,19 +32,18 @@
         }
       }
     }
-
     .card {
       max-width: $card_desk_width;
       &_txt {
         width: $card_txt_width_desk_max;
       }
       &_toggle {
-        &:checked ~ .card_content {/* reduces the size occupied by the texts for ...*/
-          width: $card_txt_width_desk_max;          
+        &:checked ~ .card_content {
+          width: $card_txt_width_desk_max;
+          /* reduit la taille occupee par les textes pour les ...*/
         }
       }
     }
-  
     .menu_subtitle {
       display: flex;
       position: relative;
@@ -56,14 +55,15 @@
         bottom: -10px;
       }
     }
-    /* adjust the position of the hearts on pages 2 to 5  */
+    /* adjustmentof the position of the hearts on pages 2 to 5  */
     .heart_container {
       right: 33%;
       top: 65%;
     }
-    /* margin between button and footer */
-    .button_command {      
-      margin-bottom: 40px;
+    .button_command {
+      /* margin between button and footer */
+      margin-bottom: 40px; 
+      
     }
   }
   

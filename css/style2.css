@@ -191,7 +191,7 @@ footer {
   height: 275px; /*give the correct height because the image is too big */
 }
 
-.cards {
+.cards { /* contains card(s) */
   background-color: #f6f6f6;
   display: flex;
   flex-direction: column;
@@ -265,7 +265,6 @@ footer {
   margin-bottom: 40px;
 }
 .card_container {
-  /* rajout pour carte2 */
   position: relative;
   height: 70px;
   width: 100%;
@@ -274,60 +273,49 @@ footer {
   border-radius: 15px;
 }
 .card_swing {
-  /* vient de card2 */
   width: 70px;
   height: 70px;
   background-color: #fff;
   position: absolute;
   right: 0;
-  z-index: 1; /* passe au dessus de l'image */
-  transition: transform 0.3s ease-in-out;
+  z-index: 1; /* goes over the image */
+  transition: transform 0.3s ease-in-out; /* swift the swinguer element */
 }
 .card_toggle {
   display: none;
 }
-.card_toggle_label {
-  /* pivot qui cache l'image */
+.card_toggle_label { /* over others elements,can be clicked to use toggle checkbox hack */
   width: 100%;
   height: 70px;
   position: absolute;
   cursor: crosshair;
   right: 0;
-  z-index: 100; /* pour passer au dessus de tout */
+  z-index: 100; /*to get over everything*/
 }
 .card_toggle:checked ~ .card_content {
-  width: 280px;
-  /* reduit la taille occupee par les textes pour les ...*/
+  width: 280px; /*reduces the size of the texts for ... */
 }
 .card_toggle:checked ~ .card_swing {
-  /* card2 devient card */
   transform: translatex(-70px);
 }
 .card_content {
-  /* vient de card2 */
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  z-index: 3; /* *********************************************** */
+  z-index: 3;
   padding: 15px;
   width: 100%;
   height: 70px;
   transition: width 0.3s ease;
   position: absolute;
-  overflow: hidden; /*super important permet de virer le radius du pivot et avoir une translation bien nette*/
-  transition: width 0.3s ease-in-out; /* suit exactement le pivot*/
+  overflow: hidden; /*allows you to erase the radius of the swinguer to have a very clear translation*/
+  transition: width 0.3s ease-in-out; /* follows the swinguer element exactly with the same properties*/
 }
 .card_content_title {
-  font-family: "Shrikhand";
-  font-size: 28px;
-  font-weight: 400;
-  color: #101010;
-  /* a enlever */
   background-color: #f6f6f6;
 }
-.card_image {
-  /* vient de card2 */
+.card_image { /* green img behind the swinguer */
   position: absolute;
   display: block;
   height: 70px;
@@ -344,17 +332,14 @@ footer {
   color: #353535;
 }
 .card_txt {
-  display: block; /* rajout */
+  display: block;
   width: 280px;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; /* for ... */
   white-space: nowrap;
   overflow: hidden;
-  transition: 0.4s ease-in-out;
-  cursor: pointer;
-  /* border: solid 1px gray; */
 }
 .card_txt_title {
-  display: block; /*rajout*/
+  display: block;
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
@@ -365,7 +350,7 @@ footer {
   overflow: hidden;
 }
 .card_txt_subtitle {
-  display: block; /*rajout*/
+  display: block;
   font-family: "Roboto";
   font-size: 15px;
   font-weight: 300;
@@ -377,7 +362,7 @@ footer {
 }
 
 body {
-  background-color: #101010;
+  background-color: #101010; /* can be deleted */
 }
 
 .main_container {
@@ -536,6 +521,7 @@ body {
   animation: visibility_on 0.3s ease-out 0.6s forwards;
 }
 
+/* import animation for the diplay of pages 2 to 4 */
 /* ********************************************************************* */
 @media (min-width: 1080px) {
   /* adjustment from 1080px and + */
@@ -600,4 +586,5 @@ body {
     /* margin between button and footer */
     margin-bottom: 40px;
   }
-}/*# sourceMappingURL=style2.css.map */
+}
+/* import media queries *//*# sourceMappingURL=style2.css.map */

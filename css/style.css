@@ -203,8 +203,9 @@ footer {
   }
 }
 
+/* https://css-tricks.com/the-checkbox-hack/ */
 .header_href {
-  visibility: hidden; /* cache la fleche du header */
+  visibility: hidden; /* hides the header arrow */
 }
 
 .search_bar {
@@ -295,7 +296,7 @@ footer {
   font-weight: 500;
   color: black;
   flex-direction: row;
-  max-width: 322px; /* tu peux jouer pour modifier la largeur */
+  max-width: 322px; /* you can modify this width */
   height: 72px;
   background-color: #f6f6f6;
   border-radius: 20px;
@@ -340,7 +341,6 @@ footer {
   border-radius: 15px;
   box-shadow: 2px 3px 11px -1px rgba(0, 0, 0, 0.1);
   position: relative;
-  /* width: fit-content; */
 }
 .card_restaurant_content {
   display: flex;
@@ -370,7 +370,7 @@ footer {
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 15px 15px 0 0;
-  max-width: 340px; /* tu peux jouer avec la taille de card ici */
+  max-width: 340px; /* you can moove this width*/
 }
 
 .nouveau::after {
@@ -458,7 +458,7 @@ footer {
   }
   .card_restaurant_content {
     background-color: white;
-    margin-top: -3px; /* enleve un gap */
+    margin-top: -3px; /* remove a gap */
     height: 60px;
   }
   .search_bar {
