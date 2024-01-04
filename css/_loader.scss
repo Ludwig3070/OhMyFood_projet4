@@ -3,28 +3,29 @@
 $thin: 0.7vw;
 $side: 10vw;
 
-.loader{
-    margin:auto;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    position:fixed;
-    z-index: 100;
-    width: #{$side};
-    height: #{$side};
-    background-color: transparent;
-    border-radius: 50%;
-    border-left: #{$thin} solid $Primary; 
-    border-top: #{$thin} solid $Secondary; 
-    border-right: #{$thin} solid $Secondary; 
-    border-bottom: #{$thin} solid $Secondary;           
-    animation: spin 0.5s linear forwards;
-    animation-iteration-count: 3;      
-    @keyframes spin {
-        100%{
-            transform: rotate(360deg);
-            display: none ;
-        }       
-    }       
+.loader {
+  @keyframes spin {
+    0%{visibility: visible;}
+   100% {
+      transform: rotate(360deg);    
+      }    
+    }  
+  
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 100;
+  width: #{$side};
+  height: #{$side};
+  background-color: transparent;
+  border-radius: 50%;
+  border-left: #{$thin} solid $Primary;
+  border-top: #{$thin} solid $Secondary;
+  border-right: #{$thin} solid $Secondary;
+  border-bottom: #{$thin} solid $Secondary;
+  visibility: hidden;
+  animation: spin 0.5s linear 0s 3 forwards;  
 }

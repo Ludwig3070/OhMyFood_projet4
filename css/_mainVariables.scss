@@ -176,7 +176,7 @@ footer {
     }
   }
   .heart_container {
-    /*the container of heart can be mooved here for all pages greater than 1080px */
+    /*the container of heart can be move here for all pages greater than 1080px */
     top: 84%;
     right: 4%;
   }
@@ -187,7 +187,7 @@ footer {
   opacity: 0.8;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.44);
 }
-#heart_click,/* a verifier si encor util */
+
 #la_palette_du_gout_heart_container_check_click,
 #a_la_francaise_heart_container_check_click,
 #le_delice_des_sens_heart_container_check_click,
@@ -195,7 +195,7 @@ footer {
   display: none;
 }
 /* common code for the 4 hearts of the index.html page */
-#heart_click:checked + .heart_container_toggle_content,/* a verifier si encor util */
+
 #la_palette_du_gout_heart_container_check_click:checked + .heart_container_toggle_content,
 #a_la_francaise_heart_container_check_click:checked + .heart_container_toggle_content,
 #le_delice_des_sens_heart_container_check_click:checked + .heart_container_toggle_content,
@@ -205,11 +205,12 @@ footer {
 }
 
 .heart_container {
-  &_toggle_content {
-    position: relative;
-  }
+  
   &1_image {
     cursor: pointer;
     position: absolute;
   }
+  
 }
+
+  
