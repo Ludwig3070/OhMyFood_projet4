@@ -136,11 +136,6 @@ footer {
   .footer_a_p_max {
     width: 168px;
   }
-  .heart_container {
-    /*the container of heart can be move here for all pages greater than 1080px */
-    top: 84%;
-    right: 4%;
-  }
 }
 /* ************************common decoration******************************************* */
 .appeal_button:hover,
@@ -165,6 +160,11 @@ footer {
   transition: opacity 0.3s ease-in-out;
 }
 
+.heart_container {
+  /*the container of heart can be move here for all pages greater than 1080px */
+  top: 84%;
+  right: 4%;
+}
 .heart_container1_image {
   cursor: pointer;
   position: absolute;
