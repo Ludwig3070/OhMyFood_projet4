@@ -188,8 +188,8 @@ footer {
   border-top: 0.7vw solid #ff79da;
   border-right: 0.7vw solid #ff79da;
   border-bottom: 0.7vw solid #ff79da;
+  animation: spin 0.5s linear 3;
   visibility: hidden;
-  animation: spin 0.5s linear 0s 3 forwards;
 }
 @keyframes spin {
   0% {
