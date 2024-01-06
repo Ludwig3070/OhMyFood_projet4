@@ -99,8 +99,7 @@
     z-index: 3; 
     padding: 15px;
     width: 100%;
-    height: 70px;
-    transition: width 0.3s ease;
+    height: 70px;    
     position: absolute;
     overflow: hidden; /*allows you to erase the radius of the swinguer to have a very clear translation*/
     transition: width 0.3s ease-in-out; /* follows the swinguer element exactly with the same properties*/
@@ -158,6 +157,10 @@ body {
 .button_command {
   @include button(186px, 50px, 0);
   margin-bottom: -30px; /* move button into the gap */
+}
+.heart_container {
+  top: 60%;
+  right: 10%;
 }
 @import "_animation_for_dishes_style2.scss"; /* import animation for the diplay of pages 2 to 4 */
 @import "_media_queries_style2.scss"; /* import media queries */

@@ -1,23 +1,23 @@
 /* animation display of the dishes on pages 2 to 4 */
-.heart_container {
-    top: 60%;
-    right: 10%;
-  }
-  @for $i from 0 through 12 {
-    .hidden_#{$i} {
-      /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-      visibility: hidden;
-    }
-  }
+
+ 
   @keyframes visibility_on {
     100% {
       visibility: visible;
     }
   }
-  
+
   @for $i from 0 through 12 {
     .hidden_#{$i} {
-      animation: visibility_on 0.3s ease-out calc($i/2 * 0.1s) forwards;
+      /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+      visibility: hidden;
+      animation: visibility_on 0.2s ease-out calc($i * 0.1s) forwards;
     }
   }
+
+
+
+
+
+  
   

@@ -302,7 +302,6 @@ footer {
   padding: 15px;
   width: 100%;
   height: 70px;
-  transition: width 0.3s ease;
   position: absolute;
   overflow: hidden; /*allows you to erase the radius of the swinguer to have a very clear translation*/
   transition: width 0.3s ease-in-out; /* follows the swinguer element exactly with the same properties*/
@@ -388,132 +387,93 @@ body {
   margin-bottom: -30px; /* move button into the gap */
 }
 
-/* animation display of the dishes on pages 2 to 4 */
 .heart_container {
   top: 60%;
   right: 10%;
 }
 
-.hidden_0 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_1 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_2 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_3 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_4 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_5 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_6 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_7 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_8 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_9 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_10 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_11 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
-.hidden_12 {
-  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
-  visibility: hidden;
-}
-
+/* animation display of the dishes on pages 2 to 4 */
 @keyframes visibility_on {
   100% {
     visibility: visible;
   }
 }
 .hidden_0 {
-  animation: visibility_on 0.3s ease-out 0s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0s forwards;
 }
 
 .hidden_1 {
-  animation: visibility_on 0.3s ease-out 0.05s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0.1s forwards;
 }
 
 .hidden_2 {
-  animation: visibility_on 0.3s ease-out 0.1s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0.2s forwards;
 }
 
 .hidden_3 {
-  animation: visibility_on 0.3s ease-out 0.15s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0.3s forwards;
 }
 
 .hidden_4 {
-  animation: visibility_on 0.3s ease-out 0.2s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0.4s forwards;
 }
 
 .hidden_5 {
-  animation: visibility_on 0.3s ease-out 0.25s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0.5s forwards;
 }
 
 .hidden_6 {
-  animation: visibility_on 0.3s ease-out 0.3s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0.6s forwards;
 }
 
 .hidden_7 {
-  animation: visibility_on 0.3s ease-out 0.35s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0.7s forwards;
 }
 
 .hidden_8 {
-  animation: visibility_on 0.3s ease-out 0.4s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0.8s forwards;
 }
 
 .hidden_9 {
-  animation: visibility_on 0.3s ease-out 0.45s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 0.9s forwards;
 }
 
 .hidden_10 {
-  animation: visibility_on 0.3s ease-out 0.5s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 1s forwards;
 }
 
 .hidden_11 {
-  animation: visibility_on 0.3s ease-out 0.55s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 1.1s forwards;
 }
 
 .hidden_12 {
-  animation: visibility_on 0.3s ease-out 0.6s forwards;
+  /* opacity: 0;  opacity modifie le contexte de position et c'est la muise*/
+  visibility: hidden;
+  animation: visibility_on 0.2s ease-out 1.2s forwards;
 }
 
 /* import animation for the diplay of pages 2 to 4 */
